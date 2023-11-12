@@ -1,12 +1,12 @@
 #include "main.hpp"
-#include "SDL2/SDL.h"
+#include "SDL.h"
 
 Engine engine(80,50);
-SDL_Event event;
 
-int main() {
+int main(int argc, char *args[]) {
+  SDL_Event event;
   bool quit = false;
-  while (quit = false) {
+  while (quit == false) {
       while(SDL_PollEvent(&event) >= 0){
      if(event.type == SDL_QUIT){
      quit = true;
