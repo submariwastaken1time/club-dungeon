@@ -62,7 +62,7 @@ void TemporaryAi::applyTo(Actor *actor) {
 	actor->ai=this;
 }
 
-ConfusedMonsterAi::ConfusedMonsterAi(int nbTurns) 
+ConfusedMonsterAi::ConfusedMonsterAi(int nbTurns)
 	: TemporaryAi(nbTurns) {
 }
 
@@ -90,22 +90,9 @@ void PlayerAi::update(Actor *owner) {
     if ( owner->destructible && owner->destructible->isDead() ) {
     	return;
     }
-	int dx=0,dy=0;
-	switch(engine.lastKey.vk) {
-		case TCODK_UP : dy=-1; break;
-		case TCODK_DOWN : dy=1; break;
-		case TCODK_LEFT : dx=-1; break;
-		case TCODK_RIGHT : dx=1; break;
-		case TCODK_CHAR : handleActionKey(owner, engine.lastKey.c); break;
-        default:break;
-    }
-    if (dx != 0 || dy != 0) {
-    	engine.gameStatus=Engine::NEW_TURN;
-    	if (moveOrAttack(owner, owner->x+dx,owner->y+dy)) {
-    		engine.map->computeFov();
-    	}
+
 	}
-}
+
 
 bool PlayerAi::moveOrAttack(Actor *owner, int targetx,int targety) {
 	if ( engine.map->isWall(targetx,targety) ) return false;
@@ -137,13 +124,13 @@ bool PlayerAi::moveOrAttack(Actor *owner, int targetx,int targety) {
 
 void PlayerAi::handleActionKey(Actor *owner, int ascii) {
 	switch(ascii) {
-		case 'd' : // drop item 
+		case 'd' : // drop item
 		{
 			Actor *actor=choseFromInventory(owner);
 			if ( actor ) {
 				actor->pickable->drop(actor,owner);
 				engine.gameStatus=Engine::NEW_TURN;
-			}			
+			}
 		}
 		break;
 		case 'g' : // pickup item
