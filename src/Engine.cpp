@@ -12,7 +12,7 @@ Engine::Engine(int screenWidth, int screenHeight) : gameStatus(STARTUP),fovRadiu
     actors.push(player);
     map = new Map(80,43);
     gui = new Gui();
-    gui->message(TCODColor::red,
+    gui->message(TCODColor::red, 
     	"Welcome stranger!\nPrepare to perish in the Tombs of the Ancient Kings.");
 }
 
@@ -81,7 +81,7 @@ Actor *Engine::getClosestMonster(int x, int y, float range) const {
 	for (Actor **iterator=actors.begin();
 	    iterator != actors.end(); iterator++) {
 		Actor *actor=*iterator;
-		if ( actor != player && actor->destructible
+		if ( actor != player && actor->destructible 
 			&& !actor->destructible->isDead() ) {
 			float distance=actor->getDistance(x,y);
 			if ( distance < bestDistance && ( distance <= range || range == 0.0f ) ) {
@@ -116,7 +116,7 @@ bool Engine::pickATile(int *x, int *y, float maxRange) {
 				*y=mouse.cy;
 				return true;
 			}
-		}
+		} 
 		if (mouse.rbutton_pressed || lastKey.vk != TCODK_NONE) {
 			return false;
 		}
