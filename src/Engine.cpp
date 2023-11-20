@@ -23,22 +23,22 @@ Engine::~Engine() {
 }
 
 void Engine::update() {
-//	if ( gameStatus == STARTUP ) map->computeFov();
-//   	gameStatus=IDLE;
-//    TCODSystem::checkForEvent(TCOD_EVENT_KEY_PRESS|TCOD_EVENT_MOUSE,&lastKey,&mouse);
-//    if ( lastKey.vk == TCODK_ENTER && lastKey.lalt ) {
-//    	TCODConsole::setFullscreen(!TCODConsole::isFullscreen());
-//    }
+	if ( gameStatus == STARTUP ) map->computeFov();
+   	gameStatus=IDLE;
+    TCODSystem::checkForEvent(TCOD_EVENT_KEY_PRESS|TCOD_EVENT_MOUSE,&lastKey,&mouse);
+    if ( lastKey.vk == TCODK_ENTER && lastKey.lalt ) {
+    	TCODConsole::setFullscreen(!TCODConsole::isFullscreen());
+    }
     player->update();
-//    if ( gameStatus == NEW_TURN ) {
-//	    for (Actor **iterator=actors.begin(); iterator != actors.end();
-//	        iterator++) {
-//	        Actor *actor=*iterator;
-//	        if ( actor != player ) {
-//	            actor->update();
-//	        }
-//	    }
-//	}
+    if ( gameStatus == NEW_TURN ) {
+	    for (Actor **iterator=actors.begin(); iterator != actors.end();
+	        iterator++) {
+	        Actor *actor=*iterator;
+	        if ( actor != player ) {
+	            actor->update();
+	        }
+	    }
+	}
 }
 
 void Engine::render() {
@@ -46,12 +46,12 @@ void Engine::render() {
 	// draw the map
 	map->render();
 	// draw the actors
-//	for (Actor **iterator=actors.begin();
-//	    iterator != actors.end(); iterator++) {
-//		Actor *actor=*iterator;
-//		if ( actor != player && map->isInFov(actor->x,actor->y) ) {
-//	        actor->render();
-//	    }
+	for (Actor **iterator=actors.begin();
+	    iterator != actors.end(); iterator++) {
+		Actor *actor=*iterator;
+		if ( actor != player && map->isInFov(actor->x,actor->y) ) {
+	        actor->render();
+	    }
 	}
 	player->render();
 	// show the player's stats
