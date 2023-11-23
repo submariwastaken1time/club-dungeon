@@ -12,7 +12,7 @@ static int QuitFunction(void *userdata, SDL_Event* event) {
  return 0;
 }
 
-int main(int argc, char *args[], SDL_Event* event) {
+int main(int argc, char *args[]) {
   SDL_AddEventWatch( QuitFunction , NULL);
   while (g_quit == false) {
    engine.update();
