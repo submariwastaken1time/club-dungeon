@@ -13,7 +13,7 @@ private :
 public :
     BspListener(Map &map) : map(map), roomNum(0) {}
     bool visitNode(TCODBsp *node, void *userData) {
-    	if ( node->isLeaf() ) {    
+    	if ( node->isLeaf() ) {
     		int x,y,w,h;
 			// dig a room
 			TCODRandom *rng=TCODRandom::getInstance();
@@ -98,8 +98,8 @@ void Map::addItem(int x, int y) {
 		healthPotion->blocks=false;
 		healthPotion->pickable=new Pickable(NULL,new HealthEffect(4,NULL));
 		engine.actors.push(healthPotion);
-	} else if ( dice < 70+10 ) {
-		// create a scroll of lightning bolt 
+	} else if ( dice < 70 ) {
+		// create a scroll of lightning bolt
 		Actor *scrollOfLightningBolt=new Actor(x,y,'#',"scroll of lightning bolt",
 			TCODColor::lightYellow);
 		scrollOfLightningBolt->blocks=false;
@@ -108,7 +108,7 @@ void Map::addItem(int x, int y) {
 			new HealthEffect(-20,"A lighting bolt strikes the %s with a loud thunder!\n"
 				"The damage is %g hit points."));
 		engine.actors.push(scrollOfLightningBolt);
-	} else if ( dice < 70+10+10 ) {
+	} else if ( dice < 70 ) {
 		// create a scroll of fireball
 		Actor *scrollOfFireball=new Actor(x,y,'#',"scroll of fireball",
 			TCODColor::lightYellow);
@@ -180,7 +180,7 @@ bool Map::canWalk(int x, int y) const {
     }
     return true;
 }
- 
+
 bool Map::isExplored(int x, int y) const {
     return tiles[x+y*width].explored;
 }
@@ -195,7 +195,7 @@ bool Map::isInFov(int x, int y) const {
     }
     return false;
 }
- 
+
 void Map::computeFov() {
     map->computeFov(engine.player->x,engine.player->y,
         engine.fovRadius);

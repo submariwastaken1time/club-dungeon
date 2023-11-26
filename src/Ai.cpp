@@ -62,7 +62,7 @@ void TemporaryAi::applyTo(Actor *actor) {
 	actor->ai=this;
 }
 
-ConfusedMonsterAi::ConfusedMonsterAi(int nbTurns) 
+ConfusedMonsterAi::ConfusedMonsterAi(int nbTurns)
 	: TemporaryAi(nbTurns) {
 }
 
@@ -137,13 +137,13 @@ bool PlayerAi::moveOrAttack(Actor *owner, int targetx,int targety) {
 
 void PlayerAi::handleActionKey(Actor *owner, int ascii) {
 	switch(ascii) {
-		case 'd' : // drop item 
+		case 'd' : // drop item
 		{
 			Actor *actor=choseFromInventory(owner);
 			if ( actor ) {
 				actor->pickable->drop(actor,owner);
 				engine.gameStatus=Engine::NEW_TURN;
-			}			
+			}
 		}
 		break;
 		case 'g' : // pickup item
