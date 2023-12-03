@@ -1,7 +1,7 @@
 {
   "C_Cpp.vcpkg.enabled": true,
   "cmake.sourceDirectory": "${workspaceFolder}",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.defaultFormatter": "xaver.clang-format",
   "editor.rulers": [
     120
@@ -101,5 +101,6 @@
     "xtree": "cpp",
     "xutility": "cpp",
     "fstream": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
