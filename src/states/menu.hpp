@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-#include <gsl-2.7.1>
+#include <gsl/gsl>
 #include <vector>
 
 #include "../constants.hpp"
