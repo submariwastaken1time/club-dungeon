@@ -26,8 +26,26 @@ inline T manhattan(T x, T y) {
 inline int manhattan(Position vec) { return manhattan(vec.x, vec.y); }
 
 /// Return the maximum metric, chessboard kings-moves of a vector.
+/// (sidenote: this will only return orthogonal directions)
 template <typename T>
 inline T chebyshev(T x, T y) {
   return std::max(std::abs(x), std::abs(y));
 }
 inline int chebyshev(Position vec) { return chebyshev(vec.x, vec.y); }
+
+/// Returns true chessboard kings-moves of a vector, diagonal moves are encoded using a
+/// {+1/-1,+1/-1} array
+template <typename T>
+inline T chess_king(T x, T y) {
+  int Result[2];
+
+  if (x != 0){
+    x > 0 ? Result[1] = 1 : Result[1] = -1;
+    if (y != 0){ y > 0 ? Result[2] = 1 : Result[2] = -1; }
+    return Result;
+  }
+  else{
+    return std::max(std::abs(x), std::abs(y));
+  }
+}
+inline int chess_king(Position vec) { return chess_king(vec.x, vec.y); }
