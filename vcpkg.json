@@ -3,7 +3,7 @@
   "name": "libtcod-template",
   "version-semver": "0.0.0",
   "dependencies": [
-    "fmt",
+    "fmt", "entt",
     {
       "name": "libtcod",
       "default-features": false,
