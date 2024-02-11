@@ -34,18 +34,14 @@ inline T chebyshev(T x, T y) {
 inline int chebyshev(Position vec) { return chebyshev(vec.x, vec.y); }
 
 /// Returns true chessboard kings-moves of a vector, diagonal moves are encoded using a
-/// {+1/-1,+1/-1} array
-template <typename T>
-inline T chess_king(T x, T y) {
-  int Result[2];
+/// {+1/-1,+1/-1} vector
+
+inline float chess_king(float x, float y) {
+  std::vector<int> Result;
 
   if (x != 0){
-    x > 0 ? Result[1] = 1 : Result[1] = -1;
-    if (y != 0){ y > 0 ? Result[2] = 1 : Result[2] = -1; }
+    x > 0 ? Result.insert( Result.begin() , 1) : Result.insert( Result.begin() , -1);
+    if (y != 0){ y > 0 ? Result.insert( Result.begin() + 1 , 1) : Result.insert( Result.begin() + 1 ,-1); }
     return Result;
   }
-  else{
-    return std::max(std::abs(x), std::abs(y));
-  }
 }
-inline int chess_king(Position vec) { return chess_king(vec.x, vec.y); }
