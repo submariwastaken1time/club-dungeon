@@ -59,6 +59,7 @@ endif()
 find_package(fmt CONFIG REQUIRED)
 find_package(SDL2 CONFIG REQUIRED)
 find_package(Microsoft.GSL CONFIG REQUIRED)
+find_package(EnTT CONFIG REQUIRED)
 
 target_link_libraries(
     ${PROJECT_NAME}
@@ -68,5 +69,7 @@ target_link_libraries(
         libtcod::libtcod
         fmt::fmt
         Microsoft.GSL::GSL
+        EnTT:EnTT
+
 
 )

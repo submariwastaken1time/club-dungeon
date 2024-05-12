@@ -110,7 +110,8 @@
     "unordered_set": "cpp",
     "valarray": "cpp",
     "variant": "cpp",
-    "pointers": "cpp"
+    "pointers": "cpp",
+    "narrow": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "git.ignoreLimitWarning": true

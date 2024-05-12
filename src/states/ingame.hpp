@@ -39,14 +39,17 @@ class InGame : public State {
             procgen::generate_level(*g_world);
             return {};
           case SDLK_F3:
+          // highlights the map
             for (auto&& it : g_world->active_map().explored) it = true;
             return {};
           case SDLK_ESCAPE:
+          // saves game
             save_world(*g_world);
             return Change{std::make_unique<MainMenu>()};
           default:
             break;
         }
+        // movement handling
         if (auto dir = get_dir_from(event); dir) {
           return cmd_move(*dir);
         }
