@@ -5,19 +5,19 @@
 #include <gsl/gsl>
 #include <random>
 
-#include "../actions/ai_basic.hpp"
+#include "components/actions/ai_basic.hpp"
 #include "../constants.hpp"
-#include "../fov.hpp"
-#include "../items/health_potion.hpp"
-#include "../items/scroll_confusion.hpp"
-#include "../items/scroll_fireball.hpp"
-#include "../items/scroll_lightning.hpp"
-#include "../maptools.hpp"
-#include "../rendering.hpp"
-#include "../types/map.hpp"
-#include "../types/ndarray.hpp"
-#include "../types/world.hpp"
-#include "../world_logic.hpp"
+#include "components/fov.hpp"
+#include "entities/items/health_potion.hpp"
+#include "entities/items/scroll_confusion.hpp"
+#include "entities/items/scroll_fireball.hpp"
+#include "entities/items/scroll_lightning.hpp"
+#include "components/maptools.hpp"
+#include "components/rendering.hpp"
+#include "components/types/map.hpp"
+#include "components/types/ndarray.hpp"
+#include "components/types/world.hpp"
+#include "components/world_logic.hpp"
 
 namespace procgen {
 /// Call func on the neighbors surrounding x, y.  This may go out of bounds.

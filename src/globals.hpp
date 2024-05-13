@@ -1,9 +1,9 @@
 #pragma once
 #include <libtcod.hpp>
 
-#include "types/controller.hpp"
-#include "types/state.hpp"
-#include "types/world.hpp"
+#include "components/types/controller.hpp"
+#include "components/types/state.hpp"
+#include "components/types/world.hpp"
 
 inline tcod::Console g_console;  // The global console object.
 inline tcod::Context g_context;  // The global libtcod context.

@@ -13,7 +13,7 @@
 #include "constants.hpp"
 #include "data.hpp"
 #include "globals.hpp"
-#include "procgen/caves.hpp"
+#include "system/procgen/caves.hpp"
 #include "rendering.hpp"
 #include "serialization.hpp"
 #include "states/ingame.hpp"

@@ -3,7 +3,7 @@
 #include <libtcod.hpp>
 #include <string>
 
-#include "../constants.hpp"
+#include "constants.hpp"
 
 struct Message {
   std::string text;

@@ -3,10 +3,10 @@
 #include <gsl/gsl>
 #include <vector>
 
-#include "../constants.hpp"
-#include "../globals.hpp"
-#include "../types/position.hpp"
-#include "../types/state.hpp"
+#include "constants.hpp"
+#include "globals.hpp"
+#include "components/types/position.hpp"
+#include "components/types/state.hpp"
 
 namespace state {
 class Menu : public State {
