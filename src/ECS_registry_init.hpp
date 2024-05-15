@@ -1,3 +1,3 @@
-#include <entt.hpp>
+#include <entt/entt.hpp>
 
 entt::registry registry;
