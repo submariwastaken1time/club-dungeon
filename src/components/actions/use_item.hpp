@@ -18,7 +18,7 @@ class UseItem : public Action {
       return Failure{"You don't have that item."};
     }
     auto& item = actor.stats.inventory.at(item_index_);
-    /*
+
     if (item.name == "health potion") {
       world.log.append(fmt::format("You use the {}.", item.name));
       combat::heal(world, actor, 4);
@@ -44,7 +44,7 @@ class UseItem : public Action {
     } else {
       assert(0);
     }
-    */
+
     return item->use_item(world, actor);
   };
 
