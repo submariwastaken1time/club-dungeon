@@ -69,7 +69,7 @@ target_link_libraries(
         libtcod::libtcod
         fmt::fmt
         Microsoft.GSL::GSL
-        EnTT:EnTT
+        EnTT::EnTT
 
 
 )
