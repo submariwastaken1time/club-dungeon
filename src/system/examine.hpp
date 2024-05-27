@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-#include "ECS_init.hpp"
+
 
 void ExamineHP(entt::entity entity){
   // remember to add in an extra clause for the component
