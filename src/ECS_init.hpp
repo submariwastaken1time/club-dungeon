@@ -1,7 +1,11 @@
+#ifndef ECS_INIT
+#define ECS_INIT
+
 #include <entt/entt.hpp>
 
 entt::registry E_registry; // monster/entity registry
 
+#endif
 /*
 gonna lay out the plans for the registry here for later reference:
 

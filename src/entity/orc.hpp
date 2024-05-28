@@ -1,19 +1,23 @@
-#include "ECS_init.hpp"
+#ifndef ORC
+#define ORC
 
+#include "ECS_init.hpp"
+#include "Global_entity_values.hpp"
 /*
 (*) monster/entity table:
 ID | name | position | character | foreground color | hp | atk | xp | AI
 */
 
-void create_orc() {
-  auto orc = E_registry.create();
-  struct name { std::string name} name;
-  E_registry.emplace<name>(orc, "Orc");
-  // E_registry.emplace<pos>(orc, 0. , 0.);
-  // E_registry.emplace<chr>(orc, O.);
-  // E_registry.emplace<fg>(orc, 0.,0.,0.);
-  // E_registry.emplace<hp>(orc, 0.);
-  // E_registry.emplace<atk>(orc, 0.);
-  // E_registry.emplace<xp>(orc, 0.);
-  // E_registry.emplace<AI>(orc, 0.);
+inline void create_orc(entt::registry registry) {
+  auto orc = registry.create();
+  registry.emplace<struct name>(orc,"Orc");
+  registry.emplace<struct pos>(orc, 0. , 0);
+  registry.emplace<struct icon>(orc, "O");
+  registry.emplace<struct fg>(orc, 0.,0.,0);
+  registry.emplace<struct hp>(orc, 0);
+  registry.emplace<struct atk>(orc, 0);
+  registry.emplace<struct xp>(orc, 0);
+  registry.emplace<struct AI>(orc, 0);
 }
+
+#endif

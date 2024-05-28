@@ -1,17 +1,24 @@
+#ifndef EXAMINE
+#define EXAMINE
 //examines hp
-
 #include <stdlib.h>
 
+#include "ECS_init.hpp"
+#include "Global_entity_values.hpp"
 
-
-void ExamineHP(entt::entity entity){
+void ExamineHP(entt::entity entity; entt::registry registry){
   // remember to add in an extra clause for the component
-  if(!E_registry.valid(entity)){
+  bool all = registry.all_of<struct hp, struct name>(entity)
+
+  if(!registry.valid(entity) && !all) {
     printf("Non valid entity/Component doesn't exist!");
   }
   else{
-  auto get_hp = E_registry.get<hp>(entity);
+  auto get_hp = registry.get<struct hp>(entity);
+  auto get_name = registry.get<struct name>(entity);
 
-  printf(get_hp);
+  std::cout << get_name; std::cout << "has"; std::cout << get_hp; std::cout << "HP";
   }
 }
+
+#endif
