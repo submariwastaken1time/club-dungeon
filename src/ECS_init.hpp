@@ -3,9 +3,12 @@
 
 #include <entt/entt.hpp>
 
+//setup for the registry and ECS component of the engine
+
 entt::registry E_registry; // monster/entity registry
 
 #endif
+
 /*
 gonna lay out the plans for the registry here for later reference:
 
