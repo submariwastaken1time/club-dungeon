@@ -17,7 +17,7 @@ void create_orc(entt::registry registry) {
   auto orc = registry.create();
   registry.emplace<name>(orc,"Orc");
   registry.emplace<pos>(orc, 0 , 0 );
-  registry.emplace<icon>(orc, "O");
+  registry.emplace<icon>(orc, 'O');
   registry.emplace<fg>(orc, 0 , 0 , 0 );
   registry.emplace<hp>(orc, 0 );
   registry.emplace<atk>(orc, 0 );
