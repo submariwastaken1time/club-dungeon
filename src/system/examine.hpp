@@ -1,5 +1,5 @@
-#ifndef EXAMINE
-#define EXAMINE
+#ifndef EXAMINE_INCLUDES // these are preprocessor directives to prevent conflicts with other files in
+#define EXAMINE_INCLUDES // compilation
 
 #include <stdlib.h>
 #include <iostream>
@@ -10,14 +10,14 @@
 #endif
 
 //examines hp
-void ExamineHP(entt::entity entity , entt::registry registry){
+void ExamineHP(entt::entity entity , entt::registry &registry){
   bool all = registry.all_of<hp,name>(entity);
   // checking if the entity is valid in the registry and if they have both an hp and name component
   if(!registry.valid(entity) && !all) {
     printf("Non valid entity/Component doesn't exist!");
   }
   else {
-  // if the components exist and the entity is valid, it gets passed here, where the hp is printed out
+  // if the components exists and the entity is valid, it gets passed here, where the hp is printed out
   // along with the name
 
   // getting the name and hp of said components, along with conversions to the needed types for
