@@ -1,5 +1,5 @@
-#ifndef BUMP
-#define BUMP
+#ifndef BUMP_INCLUDE
+#define BUMP_INCLUDE
 
 #include <stdlib.h>
 #include "ECS_init.hpp"

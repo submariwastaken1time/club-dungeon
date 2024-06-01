@@ -11,5 +11,6 @@
 
 int main(){
   Create_Orc(E_registry);
-  ExamineHP(Orc, E_registry);
+  auto const orc = E_registry.view<hp,name>.front();
+  ExamineHP(orc, E_registry);
 }

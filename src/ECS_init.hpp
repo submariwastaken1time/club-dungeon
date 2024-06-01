@@ -1,5 +1,5 @@
-#ifndef ECS_INIT
-#define ECS_INIT
+#ifndef ECS_INIT_INCLUDES
+#define ECS_INIT_INCLUDES
 
 #include <entt/entt.hpp>
 

@@ -10,7 +10,7 @@
 #endif
 
 //examines hp
-void ExamineHP(entt::entity entity , entt::registry &registry){
+void ExamineHP(entt::entity &entity , entt::registry &registry){
   bool all = registry.all_of<hp,name>(entity);
   // checking if the entity is valid in the registry and if they have both an hp and name component
   if(!registry.valid(entity) && !all) {

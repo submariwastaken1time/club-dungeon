@@ -1,6 +1,6 @@
-#ifndef GLOBAL_ENTITY_VALUES // these are preprocessor directives to prevent conflicts with other files in
-#define GLOBAL_ENTITY_VALUES // compilation. this will prevent the compiler from adding a library or
-                             // header file twice
+#ifndef GLOBAL_ENTITY_VALUES_INCLUDES // these are preprocessor directives to prevent conflicts with
+#define GLOBAL_ENTITY_VALUES_INCLUDES // other files in compilation. this will prevent the compiler
+                                      // header file twice from including a library or header
 // all of the components that entities can have in the game
 // can also be used as flags for the system to operate on only certain entities
 
