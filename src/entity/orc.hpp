@@ -15,7 +15,7 @@ ID | name | position | character | foreground color | hp | atk | xp | AI
 // more changes to the orc can be done with the in built functions that are in entt itself, but this is
 // just a blank canvas
 
-entt::entity Create_Orc(entt::registry &registry) {
+entt::entity create_orc(entt::registry &registry) {
   auto orc = registry.create();
   registry.emplace<name>(orc,"Orc");
   registry.emplace<pos>(orc, 0 , 0 );

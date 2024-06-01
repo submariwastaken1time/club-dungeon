@@ -1,9 +1,13 @@
-#ifndef GLOBAL_ENTITY_VALUES_INCLUDES // these are preprocessor directives to prevent conflicts with
-#define GLOBAL_ENTITY_VALUES_INCLUDES // other files in compilation. this will prevent the compiler
+#ifndef GLOBAL_ENTITY_VALUES_INCLUDES
+#define GLOBAL_ENTITY_VALUES_INCLUDES
+#include <string>
+#endif
+
+#ifndef GLOBAL_ENTITY_VALUES // these are preprocessor directives to prevent conflicts with
+#define GLOBAL_ENTITY_VALUES // other files in compilation. this will prevent the compiler
                                       // header file twice from including a library or header
 // all of the components that entities can have in the game
 // can also be used as flags for the system to operate on only certain entities
-
 struct name {std::string name;};
 struct pos {int pos_x; int pos_y;};
 struct icon {char icon;};

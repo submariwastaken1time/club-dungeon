@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
+#include "global_entity_values.hpp"
 #include "system/examine.hpp"
 #include "system/bump.hpp"
 #include "entity/orc.hpp"
@@ -10,7 +11,7 @@
 // this is where you assemble them
 
 int main(){
-  Create_Orc(E_registry);
-  auto const orc = E_registry.view<hp,name>.front();
-  ExamineHP(orc, E_registry);
+  create_orc(E_registry);
+  auto orc = E_registry.view<hp,name>.front();
+  examine_HP(orc, E_registry);
 }
