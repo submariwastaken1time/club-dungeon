@@ -1,4 +1,0 @@
-#ifndef RENDERING_INCLUDES
-#define RENDERING_INCLUDES
-
-#endif
