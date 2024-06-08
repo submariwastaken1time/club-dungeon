@@ -6,14 +6,14 @@
 #include "system/examine.hpp"
 #include "system/bump.hpp"
 #include "entity/orc.hpp"
-#include "rendering_init.hpp"
+#include "state_manager.hpp"
 
 // where the main loop of the game is, the code in the header files are added here, with includes used
 // to keep the code as modular as possible, think of the header files as a bin of lego pieces, and
 // this is where you assemble them
 
 int main(int argc, char* argv[]){
-  auto console = tcod::Console{1080, 720};  // Main console.
+  auto console = tcod::Console{100, 80};  // Main console.
   // Configure the context.
   auto params = TCOD_ContextParams{};
   params.tcod_version = TCOD_COMPILEDVERSION;  // This is required.
@@ -28,18 +28,7 @@ int main(int argc, char* argv[]){
   // auto tileset = tcod::load_tilesheet("terminal8x8_gs_ro.png", {16, 16}, tcod::CHARMAP_CP437);
   // params.tileset = tileset.get();
   auto context = tcod::Context(params);
-  while (1) {  // Game loop.
-    TCOD_console_clear(console.get());
-    tcod::print(console, {0, 0}, "Hello World", std::nullopt, std::nullopt);
-    context.present(console);  // Updates the visible display.
-    SDL_Event event;
-    SDL_WaitEvent(nullptr);  // Optional, sleep until events are available.
-    while (SDL_PollEvent(&event)) {
-      context.convert_event_coordinates(event);  // Optional, converts pixel coordinates into tile coordinates.
-      switch (event.type) {
-        case SDL_QUIT:
-          return 0;  // Exit.
-      }
-    }
+  while (!quit.quit) {
+
   }
 }

@@ -3,7 +3,6 @@
 
 #include "ECS_init.hpp"
 #include "global_entity_values.hpp"
-#include "rendering_init.hpp"
 
 #endif
 

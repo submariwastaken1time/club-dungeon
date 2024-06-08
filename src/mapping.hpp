@@ -8,8 +8,9 @@
 #ifndef MAPPING
 #define MAPPING
 
-void make_map(){
-  int[][][] map;
+void make_blank_map(){
+  std::vector maps_raw;
+  auto ms3 = std::mdspan(maps_raw.data(), 0 , 0 , 0)
 }
 
 #endif
