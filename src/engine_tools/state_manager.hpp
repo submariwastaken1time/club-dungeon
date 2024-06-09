@@ -1,4 +1,4 @@
 #include "states.hpp"
 
-void quit_game() { quit.quit = 1;}
+void quit_game() { G_state = quit;}
 void pause_game() { G_state = pause_menu; }

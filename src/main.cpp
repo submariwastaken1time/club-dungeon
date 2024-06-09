@@ -3,21 +3,21 @@
 #include <SDL.h>
 
 #include "global_entity_values.hpp"
+
 #include "system/examine.hpp"
 #include "system/bump.hpp"
 #include "entity/orc.hpp"
-#include "state_manager.hpp"
+#include "engine_tools/state_manager.hpp"
+#include "engine_tools/input_handling.hpp"
 
 // where the main loop of the game is, the code in the header files are added here, with includes used
 // to keep the code as modular as possible, think of the header files as a bin of lego pieces, and
 // this is where you assemble them
 
 int main(int argc, char* argv[]){
-  auto console = tcod::Console{100, 80};  // Main console.
   // Configure the context.
   auto params = TCOD_ContextParams{};
   params.tcod_version = TCOD_COMPILEDVERSION;  // This is required.
-  params.console = console.get();  // Derive the window size from the console size.
   params.window_title = "Libtcod Project";
   params.sdl_window_flags = SDL_WINDOW_RESIZABLE;
   params.vsync = true;
@@ -28,7 +28,27 @@ int main(int argc, char* argv[]){
   // auto tileset = tcod::load_tilesheet("terminal8x8_gs_ro.png", {16, 16}, tcod::CHARMAP_CP437);
   // params.tileset = tileset.get();
   auto context = tcod::Context(params);
-  while (!quit.quit) {
 
+  while (G_state != quit) {
+
+  auto console = context.new_console();
+
+  static const auto viewport_options = TCOD_ViewportOptions{
+    .tcod_version = TCOD_COMPILEDVERSION,
+    .keep_aspect = true,
+    .integer_scaling = true,
+    .clear_color = {0,0,0,255},
+    .align_x = 0.5,
+    .align_y = 0.5,
+  };
+
+  context.present(console,viewport_options);
+
+    SDL_Event kb_event;
+    while (SDL_PollEvent(&kb_event)){
+    key_to_action(SDL_GetScancodeName(kb_event.key.keysym.scancode));
+    std::cout << game_actions.y_move;
+    }
   }
+  return 0;
 }
