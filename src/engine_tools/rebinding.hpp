@@ -1,5 +1,17 @@
+#ifndef REBINDING_INCLUDES
+#define REBINDING_INCLUDES
+
 #include <string>
 
-void rebind(std::string key_to_bind_to, std::string key_to_be_binded) {
-  key_to_be_binded = key_to_bind_to
+#include "input_handling_data.hpp"
+
+#endif
+
+#ifndef REBINDING
+#define REBINDING
+
+void rebinding(std::string key, action_dictionary target) {
+  key_bind_to_enum[key] = target;
 }
+
+#endif

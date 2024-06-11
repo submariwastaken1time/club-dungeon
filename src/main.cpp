@@ -44,10 +44,12 @@ int main(int argc, char* argv[]){
 
   context.present(console,viewport_options);
 
-    SDL_Event kb_event;
-    while (SDL_PollEvent(&kb_event)){
-    key_to_action(SDL_GetScancodeName(kb_event.key.keysym.scancode));
-    std::cout << game_actions.y_move;
+    SDL_Event event;
+    while (SDL_PollEvent(&event)){
+      if(event.key.state == SDL_PRESSED){
+        key_to_action(SDL_GetScancodeName(event.key.keysym.scancode));
+        std::cout << game_actions.y_move;
+      }
     }
   }
   return 0;

@@ -4,24 +4,26 @@
 #include <string>
 
 #include "game_actions.hpp"
+#include "input_handling_data.hpp"
 #endif
 
-struct key_bind_name {
-  std::string up_key = "Up";
-} key_bind_name;
-
-void reset_inputs() {
-  game_actions.x_move = NULL;
-  game_actions.y_move = NULL;
-}
-
 void key_to_action(std::string key) {
-
-  if(key == key_bind_name.up_key) {
-    game_actions.y_move = 1;
+  game_actions = blank_actions;
+  switch(key_bind_to_enum[key]) {
+    default: {
+      game_actions = blank_actions;
+    } break;
+    case UP_MOVE: {
+      game_actions.y_move = 1;
+    } break;
+    case DOWN_MOVE: {
+      game_actions.y_move = -1;
+    } break;
+    case RIGHT_MOVE: {
+      game_actions.x_move = 1;
+    } break;
+    case LEFT_MOVE: {
+      game_actions.x_move = -1;
+    } break;
   }
-  else {
-    reset_inputs();
-  }
-
 }
