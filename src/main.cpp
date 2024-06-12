@@ -9,6 +9,7 @@
 #include "entity/orc.hpp"
 #include "engine_tools/state_manager.hpp"
 #include "engine_tools/input_handling.hpp"
+#include "engine_tools/rebinding.hpp"
 
 // where the main loop of the game is, the code in the header files are added here, with includes used
 // to keep the code as modular as possible, think of the header files as a bin of lego pieces, and
@@ -31,24 +32,26 @@ int main(int argc, char* argv[]){
 
   while (G_state != quit) {
 
-  auto console = context.new_console();
+  // auto console = context.new_console();
 
-  static const auto viewport_options = TCOD_ViewportOptions{
-    .tcod_version = TCOD_COMPILEDVERSION,
-    .keep_aspect = true,
-    .integer_scaling = true,
-    .clear_color = {0,0,0,255},
-    .align_x = 0.5,
-    .align_y = 0.5,
-  };
+  // static const auto viewport_options = TCOD_ViewportOptions{
+  //   .tcod_version = TCOD_COMPILEDVERSION,
+  //   .keep_aspect = true,
+  //   .integer_scaling = true,
+  //   .clear_color = {0,0,0,255},
+  //   .align_x = 0.5,
+  //   .align_y = 0.5,
+  // };
+  auto console = tcod::Console{80,50};
 
-  context.present(console,viewport_options);
+  // context.present(console,viewport_options);
 
     SDL_Event event;
     while (SDL_PollEvent(&event)){
       if(event.key.state == SDL_PRESSED){
         key_to_action(SDL_GetScancodeName(event.key.keysym.scancode));
         std::cout << game_actions.y_move;
+        tcod::print(console, {10,10}, "Hello World", {{255, 255, 255}}, {{0, 0, 0}});
       }
     }
   }
