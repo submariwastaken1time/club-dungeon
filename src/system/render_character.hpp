@@ -21,7 +21,7 @@ auto& tile = console.at({x, y});
 tile.ch = code_point;
 tile.fg = fg_color;
 tile.bg = bg_color;
-
+std::cout << "rendering" << std::endl;
 }
 
 #endif

@@ -25,5 +25,6 @@ entt::entity create_orc(entt::registry &registry) {
   registry.emplace<atk>(orc, 0 );
   registry.emplace<xp>(orc, 0 );
   registry.emplace<AI>(orc, 0 );
+  registry.emplace<actions>(orc, blank_actions);
   return orc;
 }

@@ -4,8 +4,8 @@
 
 #include "global_entity_values.hpp"
 
-#include "system/examine.hpp"
-#include "system/bump.hpp"
+#include "system/examine_HP.hpp"
+#include "system/bump_test.hpp"
 #include "system/render_character.hpp"
 #include "entity/orc.hpp"
 #include "entity/player.hpp"
@@ -46,12 +46,9 @@ int main(int argc, char* argv[]){
     .align_y = 0.5,
   };
 
-  render_character(create_player(E_registry), E_registry, console, {0,0,0});
-
-
   // auto console = tcod::Console{80,50};
-  tcod::print(console, {0, 0}, "Hello World", {{255, 255, 255}}, {{0, 0, 0}});
-  std::cout << TCOD_get_error();
+  tcod::print(console, {1, 0}, "Hello World", {{255, 255, 255}}, {{0, 0, 0}});
+  render_character(create_player(E_registry), E_registry, console, {0,0,0});
   context.present(console,viewport_options);
 
     // context.present(console);

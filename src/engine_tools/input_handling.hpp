@@ -7,23 +7,24 @@
 #include "input_handling_data.hpp"
 #endif
 
-void key_to_action(std::string key) {
+void key_to_action(std::string key, entt::registry &reg) {
   game_actions = blank_actions;
+  auto player = reg.view<player_marker>();
   switch(key_bind_to_enum[key]) {
     default: {
-      game_actions = blank_actions;
+      reg.get<actions>(player).game_actions = blank_actions;
     } break;
     case UP_MOVE: {
-      game_actions.y_move = 1;
+      reg.get<actions>(player).game_actions.y_move = 1;
     } break;
     case DOWN_MOVE: {
-      game_actions.y_move = -1;
+      reg.get<actions>(player).game_actions.y_move = -1;
     } break;
     case RIGHT_MOVE: {
-      game_actions.x_move = 1;
+      reg.get<actions>(player).game_actions.x_move = 1;
     } break;
     case LEFT_MOVE: {
-      game_actions.x_move = -1;
+      reg.get<actions>(player).game_actions.x_move = -1;
     } break;
   }
 }

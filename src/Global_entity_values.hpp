@@ -1,6 +1,8 @@
 #ifndef GLOBAL_ENTITY_VALUES_INCLUDES
 #define GLOBAL_ENTITY_VALUES_INCLUDES
 #include <string>
+
+#include "game_actions.hpp"
 #endif
 
 #ifndef GLOBAL_ENTITY_VALUES // these are preprocessor directives to prevent conflicts with
@@ -17,5 +19,5 @@ struct hp {int hp;};
 struct atk {int atk;};
 struct xp {int xp; int level;};
 struct AI {int AI;};
-
+struct actions {struct game_actions actions;};
 #endif

@@ -1,5 +1,5 @@
-#ifndef EXAMINE_INCLUDES // these are preprocessor directives to prevent conflicts with other files in
-#define EXAMINE_INCLUDES // compilation
+#ifndef EXAMINE_HP_INCLUDES // these are preprocessor directives to prevent conflicts with other files in
+#define EXAMINE_HP_INCLUDES // compilation
 //system header includes
 #include <stdlib.h>
 #include <iostream>
@@ -10,8 +10,8 @@
 
 #endif
 
-#ifndef EXAMINE
-#define EXAMINE
+#ifndef EXAMINE_HP
+#define EXAMINE_HP
 
 //examines hp
 void examine_HP(entt::entity entity , entt::registry &registry){
