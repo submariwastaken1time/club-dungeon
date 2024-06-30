@@ -8,10 +8,10 @@
 #include "system/bump_test.hpp"
 #include "system/render_character.hpp"
 #include "system/move.hpp"
-#include "entity/orc.hpp"
+#include "system/input_handling.hpp"
 #include "entity/player.hpp"
+#include "entity/orc.hpp"
 #include "engine_tools/state_manager.hpp"
-#include "engine_tools/input_handling.hpp"
 #include "engine_tools/rebinding.hpp"
 #include "engine_tools/update_game.hpp"
 // where the main loop of the game is, the code in the header files are added here, with includes used
@@ -56,6 +56,7 @@ int main(int argc, char* argv[]){
       if(event.key.state == SDL_PRESSED){
         update_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
         update_monsters(E_registry);
+
       }
     }
     SDL_WaitEvent(nullptr);
