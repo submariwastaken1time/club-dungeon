@@ -3,7 +3,7 @@
 struct game_actions {
   int x_move = 0;
   int y_move = 0;
-} game_actions;
+};
 
 struct game_actions blank_actions;
 
