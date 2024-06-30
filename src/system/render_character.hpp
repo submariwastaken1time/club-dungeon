@@ -1,6 +1,6 @@
 #ifndef RENDER_CHAR_INCLUDES
 #define RENDER_CHAR_INCLUDES
-#include <string_view>
+#include <iostream>
 
 #include "ECS_init.hpp"
 #include "global_entity_values.hpp"
@@ -21,7 +21,6 @@ auto& tile = console.at({x, y});
 tile.ch = code_point;
 tile.fg = fg_color;
 tile.bg = bg_color;
-std::cout << "rendering" << std::endl;
 }
 
 #endif
