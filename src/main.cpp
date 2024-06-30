@@ -7,12 +7,13 @@
 #include "system/examine_HP.hpp"
 #include "system/bump_test.hpp"
 #include "system/render_character.hpp"
+#include "system/move.hpp"
 #include "entity/orc.hpp"
 #include "entity/player.hpp"
 #include "engine_tools/state_manager.hpp"
 #include "engine_tools/input_handling.hpp"
 #include "engine_tools/rebinding.hpp"
-
+#include "engine_tools/update_game.hpp"
 // where the main loop of the game is, the code in the header files are added here, with includes used
 // to keep the code as modular as possible, think of the header files as a bin of lego pieces, and
 // this is where you assemble them
@@ -46,17 +47,15 @@ int main(int argc, char* argv[]){
     .align_y = 0.5,
   };
 
-  // auto console = tcod::Console{80,50};
   tcod::print(console, {1, 0}, "Hello World", {{255, 255, 255}}, {{0, 0, 0}});
   render_character(create_player(E_registry), E_registry, console, {0,0,0});
   context.present(console,viewport_options);
 
-    // context.present(console);
     SDL_Event event;
     while (SDL_PollEvent(&event)){
       if(event.key.state == SDL_PRESSED){
-        key_to_action(SDL_GetScancodeName(event.key.keysym.scancode));
-        std::cout << game_actions.y_move;
+        update_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
+        update_monsters(E_registry);
       }
     }
     SDL_WaitEvent(nullptr);

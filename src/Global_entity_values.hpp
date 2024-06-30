@@ -14,7 +14,7 @@ struct player_marker{}; // marker for the player
 struct name {std::string name;};
 struct pos {int pos_x; int pos_y; int pos_level;};
 struct icon {char icon;};
-struct fg {int fg_r; int fg_g; int fg_b;};
+struct fg {uint8_t fg_r; int fg_g; int fg_b;};
 struct hp {int hp;};
 struct atk {int atk;};
 struct xp {int xp; int level;};

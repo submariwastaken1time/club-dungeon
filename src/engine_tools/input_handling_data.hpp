@@ -1,6 +1,8 @@
 #ifndef INPUT_HANDLING_DATA
 #define INPUT_HANDLING_DATA
+
 #include <unordered_map>
+
 std::unordered_map<std::string, action_dictionary> key_bind_to_enum = {
   {"", NONE},
   {"Up", UP_MOVE},
@@ -8,4 +10,5 @@ std::unordered_map<std::string, action_dictionary> key_bind_to_enum = {
   {"Left", LEFT_MOVE},
   {"Right", RIGHT_MOVE}
 };
+
 #endif
