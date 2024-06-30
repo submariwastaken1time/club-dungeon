@@ -1,6 +1,8 @@
 #ifndef MOVE_INCLUDES
 #define MOVE_INCLUDES
 
+#include <iostream>
+
 #include "ECS_init.hpp"
 #include "global_entity_values.hpp"
 
@@ -18,6 +20,8 @@ void move(entt::entity entity, entt::registry &reg)  {
 
   reg.patch<pos>(entity, [&](auto &pos) {pos.pos_x = new_x;});
   std::cout << reg.get<pos>(entity).pos_x;
+  reg.patch<pos>(entity, [&](auto &pos) {pos.pos_y = new_y;});
+  std::cout << reg.get<pos>(entity).pos_y << std::endl;
 }
 
 #endif
