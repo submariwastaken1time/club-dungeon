@@ -4,16 +4,17 @@
 
 #include "global_entity_values.hpp"
 
-#include "system/examine_HP.hpp"
-#include "system/bump_test.hpp"
-#include "system/render_character.hpp"
-#include "system/move.hpp"
-#include "system/input_handling.hpp"
+#include "system/render_game.hpp"
+#include "system/update_game.hpp"
+#include "system/modules/examine_HP.hpp"
+#include "system/modules/bump_test.hpp"
+#include "system/modules/render_character.hpp"
+#include "system/modules/move.hpp"
+#include "system/modules/input_handling.hpp"
 #include "entity/player.hpp"
 #include "entity/orc.hpp"
 #include "engine_tools/state_manager.hpp"
 #include "engine_tools/rebinding.hpp"
-#include "engine_tools/update_game.hpp"
 // where the main loop of the game is, the code in the header files are added here, with includes used
 // to keep the code as modular as possible, think of the header files as a bin of lego pieces, and
 // this is where you assemble them
@@ -47,7 +48,6 @@ int main(int argc, char* argv[]){
     .align_y = 0.5,
   };
 
-  tcod::print(console, {1, 0}, "Hello World", {{255, 255, 255}}, {{0, 0, 0}});
   render_character(create_player(E_registry), E_registry, console, {0,0,0});
   context.present(console,viewport_options);
 

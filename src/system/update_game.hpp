@@ -4,8 +4,8 @@
 #include "ECS_init.hpp"
 #include "global_entity_values.hpp"
 #include "game_actions.hpp"
-#include "system/input_handling.hpp"
-#include "system/move.hpp"
+#include "system/modules/input_handling.hpp"
+#include "system/modules/move.hpp"
 
 #endif
 
