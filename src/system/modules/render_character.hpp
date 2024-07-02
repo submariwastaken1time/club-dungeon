@@ -17,10 +17,13 @@ int x = reg.get<pos>(entity).pos_x;
 int y = reg.get<pos>(entity).pos_y;
 TCOD_ColorRGB fg_color = {reg.get<fg>(entity).fg_r, reg.get<fg>(entity).fg_b, reg.get<fg>(entity).fg_b};
 
-auto& tile = console.at({x, y});
-tile.ch = code_point;
-tile.fg = fg_color;
-tile.bg = bg_color;
+if (console.in_bounds({x, y})) {
+  auto& tile = console.at({x, y});
+  tile.ch = code_point;
+  tile.fg = fg_color;
+  tile.bg = bg_color;
+} else {}
+
 }
 
 #endif

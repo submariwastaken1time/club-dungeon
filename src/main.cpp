@@ -19,7 +19,7 @@
 // to keep the code as modular as possible, think of the header files as a bin of lego pieces, and
 // this is where you assemble them
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]) {
   // Configure the context.
   auto params = TCOD_ContextParams{};
   params.tcod_version = TCOD_COMPILEDVERSION;  // This is required.
@@ -47,16 +47,14 @@ int main(int argc, char* argv[]){
     .align_x = 0.5,
     .align_y = 0.5,
   };
-
-  render_character(create_player(E_registry), E_registry, console, {0,0,0});
+  create_player(E_registry);
+  render_entity(E_registry, console, {0,0,0});
   context.present(console,viewport_options);
-
     SDL_Event event;
     while (SDL_PollEvent(&event)){
       if(event.key.state == SDL_PRESSED){
         update_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
         update_monsters(E_registry);
-
       }
     }
     SDL_WaitEvent(nullptr);

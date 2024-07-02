@@ -19,10 +19,10 @@ void input_to_action(std::string key, entt::registry &reg, entt::entity entity) 
       reg.patch<actions>(entity,[&](auto &actions) {actions.actions = blank_actions;});
     } break;
     case UP_MOVE: {
-      reg.patch<actions>(entity,[&](auto &actions) {actions.actions.y_move = 1;});
+      reg.patch<actions>(entity,[&](auto &actions) {actions.actions.y_move = -1;});
     } break;
     case DOWN_MOVE: {
-      reg.patch<actions>(entity,[&](auto &actions) {actions.actions.y_move = -1;});
+      reg.patch<actions>(entity,[&](auto &actions) {actions.actions.y_move = 1;});
     } break;
     case RIGHT_MOVE: {
       reg.patch<actions>(entity,[&](auto &actions) {actions.actions.x_move = 1;});
