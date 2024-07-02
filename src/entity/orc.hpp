@@ -6,11 +6,6 @@
 
 #endif
 
-/*
-(*) monster/entity table:
-ID | name | position | character | foreground color | hp | atk | xp | AI
-*/
-
 // creates a blank orc with blank values
 // more changes to the orc can be done with the in built functions that are in entt itself, but this is
 // just a blank canvas

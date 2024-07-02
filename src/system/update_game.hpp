@@ -22,7 +22,8 @@ for (auto entity : view_moves) {
 
 void update_player(entt::registry &reg, std::string key) { auto view_player = reg.view<player_marker>();
   for (auto player : view_player) {
-    input_to_action(key, reg, player);
+    input_to_action(key, reg, player); // feeds the necessary parameters to the function. cuts down on
+    // lines of code
   }
 }
 #endif

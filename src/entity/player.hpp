@@ -6,7 +6,7 @@
 #include "game_actions.hpp"
 
 #endif
-
+// similar to the create_orc function in orc.hpp
 entt::entity create_player(entt::registry &registry) {
   auto player = registry.create();
   registry.emplace<player_marker>(player);

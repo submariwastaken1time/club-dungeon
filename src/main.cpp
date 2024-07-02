@@ -20,25 +20,26 @@
 // this is where you assemble them
 
 int main(int argc, char* argv[]) {
+  // most of this is self explanatory if you look at the names
   // Configure the context.
   auto params = TCOD_ContextParams{};
   params.tcod_version = TCOD_COMPILEDVERSION;  // This is required.
   params.window_title = "Libtcod Project";
-  params.sdl_window_flags = SDL_WINDOW_RESIZABLE;
+  params.sdl_window_flags = SDL_WINDOW_RESIZABLE; // allows for a resizable window
   params.vsync = true;
   params.argc = argc;  // This allows some user-control of the context.
   params.argv = argv;
-  // Tileset example using a Code Page 437 font.
-  // "terminal8x8_gs_ro.png" must be in the working directory.
+
+  // these are used to configure a custom tileset, a lot of this is specified in the libtcod docs
   auto tileset = tcod::load_tilesheet("E://club-dungeon/Anikki_square_16x16.png", {16, 16},
   tcod::CHARMAP_CP437);
   params.tileset = tileset.get();
   auto context = tcod::Context(params);
 
   while (G_state != quit) {
-
+  // game loop with dynamic console
   auto console = context.new_console();
-
+  // viewport options used to configure the dynamic console
   static const auto viewport_options = TCOD_ViewportOptions{
     .tcod_version = TCOD_COMPILEDVERSION,
     .keep_aspect = true,
@@ -47,17 +48,19 @@ int main(int argc, char* argv[]) {
     .align_x = 0.5,
     .align_y = 0.5,
   };
-  create_player(E_registry);
-  render_entity(E_registry, console, {0,0,0});
-  context.present(console,viewport_options);
+  create_player(E_registry); // create the player
+  render_entity(E_registry, console, {0,0,0}); // render the game
+  context.present(console,viewport_options); // present to the console
     SDL_Event event;
     while (SDL_PollEvent(&event)){
-      if(event.key.state == SDL_PRESSED){
+      // takes in mouse move events, keyboard, you name it
+      if(event.key.state == SDL_PRESSED) {
+        // only process events and update the game if a key were to be pressed or held down
         update_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
         update_monsters(E_registry);
       }
     }
-    SDL_WaitEvent(nullptr);
+    SDL_WaitEvent(nullptr); // wait until new events are available
   }
   return 0;
 }

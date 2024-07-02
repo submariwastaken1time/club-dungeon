@@ -1,5 +1,5 @@
-#ifndef EXAMINE_HP_INCLUDES // these are preprocessor directives to prevent conflicts with other files in
-#define EXAMINE_HP_INCLUDES // compilation
+#ifndef EXAMINE_HP_INCLUDES // these are preprocessor directives to prevent conflicts with other files
+#define EXAMINE_HP_INCLUDES // in compilation
 //system header includes
 #include <stdlib.h>
 #include <iostream>
@@ -24,8 +24,7 @@ void examine_HP(entt::entity entity , entt::registry &registry){
   // if the components exists and the entity is valid, it gets passed here, where the hp is printed out
   // along with the name
 
-  // getting the name and hp of said components, along with conversions to the needed types for
-  // the printf function to work
+  // getting the name and hp of said components
   int get_HP = registry.get<hp>(entity).hp;
   std::string get_name = registry.get<name>(entity).name;
 

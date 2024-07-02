@@ -11,17 +11,18 @@
 #ifndef MOVE
 #define MOVE
 
+// moves the entity
+
 void move(entt::entity entity, entt::registry &reg)  {
+  // getting the action components
   auto x_movement = reg.get<actions>(entity).actions.x_move;
   auto y_movement = reg.get<actions>(entity).actions.y_move;
-
+  // calculating the new position of the entity
   auto new_x = reg.get<pos>(entity).pos_x + x_movement;
   auto new_y = reg.get<pos>(entity).pos_y + y_movement;
-
+  // patching the new position to the entity
   reg.patch<pos>(entity, [&](auto &pos) {pos.pos_x = new_x;});
-  std::cout << reg.get<pos>(entity).pos_x;
   reg.patch<pos>(entity, [&](auto &pos) {pos.pos_y = new_y;});
-  std::cout << reg.get<pos>(entity).pos_y << std::endl;
 
 }
 

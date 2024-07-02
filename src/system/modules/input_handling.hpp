@@ -13,9 +13,17 @@
 #define INPUT_HANDLING
 
 void input_to_action(std::string key, entt::registry &reg, entt::entity entity) {
+  // sets all actions to a blank action struct
+  // all keys are then fed to an std::unordered_map, where it is converted to the actions in the
+  // cases below, if the cases match, the function will patch the corresponding action to the action
+  // struct, where it will be processed by the move function
+
+  // additionally, the game renders with the coordinates (0,0) in the top left of the screen,
+  // hence the negative y_move figure
   reg.patch<actions>(entity,[&](auto &actions) {actions.actions = blank_actions;});
   switch(key_bind_to_enum[key]) {
     default: {
+      // this is meant to combat a quirk of c++ where the default block is ran first
       reg.patch<actions>(entity,[&](auto &actions) {actions.actions = blank_actions;});
     } break;
     case UP_MOVE: {

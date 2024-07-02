@@ -1,0 +1,18 @@
+this is an engine built with modularity in mind, every single part of the engine is built to be like
+lego pieces where you can pretty much mix and match every piece arbitrarily as long as every piece
+agrees with eachother
+
+this is all of the code that is in my tutorial, but before you go through it, you should understand
+what these terms i use mean:
+
+modules: these are functions that do the logic of the game and are built to be modular, for example:
+want movement removed from the game? remove the move.hpp file in the src/system/modules folder and
+every place where move is called and nothing will move
+
+engine_tools: these are utilities meant to do other miscellaneous things, like managing mapping info,
+translating keys to an action dictionary, things like that
+
+renderables: these are entities with position, icon and foreground color components
+
+the rest of the terms are rather standard and or come from the entt library that i use as the main
+backbone to this engine

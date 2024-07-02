@@ -10,6 +10,9 @@
                                       // header file twice from including a library or header
 // all of the components that entities can have in the game
 // can also be used as flags for the system to operate on only certain entities
+
+// these are the components that compose an entity
+
 struct player_marker{}; // marker for the player
 struct name {std::string name;};
 struct pos {int pos_x; int pos_y; int pos_level;};
