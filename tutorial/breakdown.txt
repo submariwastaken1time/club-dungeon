@@ -1,0 +1,20 @@
+As for how to break things down. it's not exactly clear most of the time as it depends a lot on a
+case by case basis, but for something like a fireball spell that you can shoot at a bunch of enemies
+and when it lands it lights a bunch of random tiles in a limited area on fire while also dealing
+damage to enemies, you can break it down like this:
+
+You can first use a raycast through the line drawing toolkit that comes with libtcod and a distance
+calculating function to figure out the range of the spell, assuming you want to shoot it like a wand
+and has a limited range.
+
+Then you can implement the fireball projectile itself for an animation if you want, or if you only want
+it to be raycast then you can skip the projectile step and go straight to the next one.
+
+Finally for when the projectile lands, you can log the landing location, mark out an area affected by
+the impact then iterate through the tiles in that area twice, the first iteration can be for
+determining who gets damaged by flipping a coin every tile and you can roll a random number to see how
+much they get damaged, the second will be for determining which tile is lit on fire.
+
+The next step is to actually implement that, which sometimes can be rather straight forward, but other
+times can also be rather troublesome. For that I recommend using google, stack overflow and especially
+discord to contact people to get help on how to get that working.

@@ -9,7 +9,7 @@ This is less a tutorial and will be more a project breakdown.
 
 It will detail how the engine works in the most basic of ways, and is meant as inspiration for those stuck to make their own.
 
-There will also be a section covering how one could break down certain features into things that are more manageable to implement into their game.
+There will also be a section covering how one could break down certain features into things that are more manageable to implement into their game through examples.
 
 # Some other notes
 This is the first tutorial I have ever done and so would like to be given feedback (contact info here)
@@ -19,7 +19,7 @@ The source code included is also a good place to reference for veterans, and or 
 If you are confused about what I mean, 'disambiguation.txt" might be a good place for you to reference.
 ## First step
 
-So, you've chosen to proceed. Great, the first step is to clone the tutorial branch of this repo, you can do this by typing 'git repo clone --branch tutorial <url of the repo>' (this will clone only the branch "tutorial" of my repo) into your command prompt at a location of your choosing after you have installed git of course, it will make a folder called 'club-dungeon' at your place and populate it with the source code and build system.
+So, you've chosen to proceed. Great, the first step is to clone the tutorial branch of this repo, you can do this by typing 'git repo clone --branch tutorial <url of the repo>' (this will clone only the branch "tutorial" of my repo) into your command prompt at a location of your choosing after you have installed git of course, it will make a folder called 'club-dungeon' at your place and populate it with the source code and build system. the folder called 'tutorial' should have everything you need to read
 
 ## These are the build instructions that come with the template that I am using:
 # How this works
