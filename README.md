@@ -5,17 +5,11 @@ learning how to make their own things) out of it.
 This in all honesty will serve less as a tutorial and more as a gentle submersion into the world of doing your own things.
 
 # What this will entail
-This tutorial will go over the steps to make a walking @ demo using EnTT, libtcod and SDL using C++23 and the libtcod project template from the ever helpful HexDecimal.
+This is less a tutorial and will be more a project breakdown.
 
-EnTT will be used as the ECS component, helping manage the entities that the engine uses and significantly cutting down on the amount of reinventing the wheel that has to happen.
+It will detail how the engine works in the most basic of ways, and is meant as inspiration for those stuck to make their own.
 
-SDL will be used to process inputs from the player.
-
-libtcod will be used to handle rendering.
-
-Along with that will be my thought process and the details of how I came up with the engine.
-
-At the end will be a section covering how one could break down certain features into things that are more manageable to implement into their game.
+There will also be a section covering how one could break down certain features into things that are more manageable to implement into their game.
 
 # Some other notes
 This is the first tutorial I have ever done and so would like to be given feedback (contact info here)
@@ -25,7 +19,7 @@ The source code included is also a good place to reference for veterans, and or 
 If you are confused about what I mean, 'disambiguation.txt" might be a good place for you to reference.
 ## First step
 
-So, you've chosen to proceed. Great, the first step is to clone the tutorial branch of this repo, you can do this by typing 'git repo clone --branch tutorial <url of the repo>' (this will clone only the branch "tutorial" of my repo) into your command prompt at a location of your choosing after you have installed git of course, it will make a folder called 'club-dungeon' at your place and populate it with the source code and build system along with the tutorial files. from then on you can check out the txt files in the 'tutorial' folder.
+So, you've chosen to proceed. Great, the first step is to clone the tutorial branch of this repo, you can do this by typing 'git repo clone --branch tutorial <url of the repo>' (this will clone only the branch "tutorial" of my repo) into your command prompt at a location of your choosing after you have installed git of course, it will make a folder called 'club-dungeon' at your place and populate it with the source code and build system.
 
 ## These are the build instructions that come with the template that I am using:
 # How this works

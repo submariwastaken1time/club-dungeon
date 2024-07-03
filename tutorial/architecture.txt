@@ -1,0 +1,10 @@
+How this engine works is this:
+
+The @ is an entity with a position, character, color, etc, this data is represented by components,
+detailed in the global_entity_values.hpp file
+
+the system in the system folder will loop over every entity specified and execute things based on
+the modules in the system/modules folder to update and render them.
+
+modules are the bread and butter of this engine and are the preferred way of adding features to the
+game, with engine tools and other files being a support structure.
