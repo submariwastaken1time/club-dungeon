@@ -1,23 +1,34 @@
-## Who this tutorial is for
+# Who this tutorial is for
 This is a tutorial to get people in tutorial hell (that is, knowing what to do from tutorials but not
-learning how to make their own things).
+learning how to make their own things) out of it.
 
 This in all honesty will serve less as a tutorial and more as a gentle submersion into the world of doing your own things.
 
-## What this will entail
-This tutorial will go over the steps to make a walking @ demo using EnTT, libtcod and SDL using C++23
+# What this will entail
+This tutorial will go over the steps to make a walking @ demo using EnTT, libtcod and SDL using C++23 and the libtcod project template from the ever helpful HexDecimal.
 
-EnTT will be used as the ECS component, helping manage the entities that the engine uses and significantly cutting down on the amount of reinventing the wheel that has to happen
+EnTT will be used as the ECS component, helping manage the entities that the engine uses and significantly cutting down on the amount of reinventing the wheel that has to happen.
 
-SDL will be used to process inputs from the player
+SDL will be used to process inputs from the player.
 
-libtcod will be used to handle rendering
+libtcod will be used to handle rendering.
 
-Along with that will be my thought process and the details of how I came up with the engine
+Along with that will be my thought process and the details of how I came up with the engine.
 
-At the end will be a section covering how one could break down certain features into thing
-## These are the build instructions that come with the template that I am using
-## How this works
+At the end will be a section covering how one could break down certain features into things that are more manageable to implement into their game.
+
+# Some other notes
+This is the first tutorial I have ever done and so would like to be given feedback (contact info here)
+
+The source code included is also a good place to reference for veterans, and or people looking to read my half baked code, it is far from perfect but I have went out of my way to ensure close to everything is commented well, beware: it does assume a decent understanding of the libraries listed above
+
+If you are confused about what I mean, 'disambiguation.txt" might be a good place for you to reference.
+## First step
+
+So, you've chosen to proceed. Great, the first step is to clone the tutorial branch of this repo, you can do this by typing 'git repo clone --branch tutorial <url of the repo>' (this will clone only the branch "tutorial" of my repo) into your command prompt at a location of your choosing after you have installed git of course, it will make a folder called 'club-dungeon' at your place and populate it with the source code and build system along with the tutorial files. from then on you can check out the txt files in the 'tutorial' folder.
+
+## These are the build instructions that come with the template that I am using:
+# How this works
 
 This is a CMake project which uses Vcpkg for dependency management.
 
@@ -38,7 +49,7 @@ The workflow simply invokes CMake directly, since this setup does not depend on 
 Actions which pass without fail will provide archived executables to test with, these are temporary and are downloaded from the passing action under *automated-builds*.
 To permanently publish these builds you can push an annotated tag named after the version of the build, such as `1.0.0` or `2000.12.30`.
 
-## How to setup
+# How to setup
 
 * Make sure you have the correct tools ready.
   * For example on Windows:
@@ -66,7 +77,7 @@ Now that you know the template works you'll want to take care the following:
   You may want to edit other parts of the CMake script as well, such as the included source files.
 * Verify the style settings in [.clang-format](.clang-format) and [.editorconfig](.editorconfig).
 
-## Configuring submodules
+# Configuring submodules
 
 After you run `git submodule update --init` you can setup the submodules by going into their initialized submodule directories and checking out the desired commits.
 See the [Git Documentation on Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
