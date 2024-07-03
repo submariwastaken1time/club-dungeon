@@ -1,5 +1,21 @@
 ## Who this tutorial is for
-this t
+This is a tutorial to get people in tutorial hell (that is, knowing what to do from tutorials but not
+learning how to make their own things).
+
+This in all honesty will serve less as a tutorial and more as a gentle submersion into the world of doing your own things.
+
+## What this will entail
+This tutorial will go over the steps to make a walking @ demo using EnTT, libtcod and SDL using C++23
+
+EnTT will be used as the ECS component, helping manage the entities that the engine uses and significantly cutting down on the amount of reinventing the wheel that has to happen
+
+SDL will be used to process inputs from the player
+
+libtcod will be used to handle rendering
+
+Along with that will be my thought process and the details of how I came up with the engine
+
+At the end will be a section covering how one could break down certain features into thing
 ## These are the build instructions that come with the template that I am using
 ## How this works
 
