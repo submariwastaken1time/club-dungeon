@@ -53,3 +53,5 @@ After you run `git submodule update --init` you can setup the submodules by goin
 See the [Git Documentation on Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 To update SDL, libtcod, or any other dependency fetched with `vcpkg` you should go into the `vcpkg` folder and then checkout and pull its `master` branch to get the most recent ports.
+
+Note: this project also requires MSVC v142  - VS 2019 x64/86 build tools for it to configure.
