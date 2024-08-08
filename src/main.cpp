@@ -1,3 +1,9 @@
+// a way to turn on/off debug printing and other useful features for debugging
+
+// #ifndef debug_mode
+// #define debug_mode
+// #endif
+
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
 #endif  __EMSCRIPTEN__
