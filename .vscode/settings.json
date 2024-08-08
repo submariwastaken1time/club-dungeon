@@ -111,7 +111,8 @@
     "valarray": "cpp",
     "variant": "cpp",
     "pointers": "cpp",
-    "narrow": "cpp"
+    "narrow": "cpp",
+    "source_location": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "git.ignoreLimitWarning": true
