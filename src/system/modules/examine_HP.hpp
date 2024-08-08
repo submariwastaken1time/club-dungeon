@@ -6,7 +6,7 @@
 #include <format>
 //source folder includes
 #include "ECS_init.hpp"
-#include "Global_entity_values.hpp"
+#include "global_entity_values.hpp"
 
 #endif
 
