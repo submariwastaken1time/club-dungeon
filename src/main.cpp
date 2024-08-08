@@ -1,6 +1,6 @@
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
-#endif  // __EMSCRIPTEN__
+#endif  __EMSCRIPTEN__
 
 #include <stdlib.h>
 #include <libtcod.hpp>
@@ -32,7 +32,6 @@ pieces, and this is where you assemble them
 */
 
 int main(int argc, char* argv[]) {
-  init_game();
     // Configure the context.
   params.tcod_version = TCOD_COMPILEDVERSION;  // This is required.
   params.window_title = "Libtcod Project";
@@ -43,6 +42,7 @@ int main(int argc, char* argv[]) {
   auto tileset = tcod::load_tilesheet("E://club-dungeon/Anikki_square_16x16.png", {16, 16},
   tcod::CHARMAP_CP437);
   params.tileset = tileset.get();
+    init_game();
   #ifdef __EMSCRIPTEN__
   emscripten_set_main_loop(main_loop, 0, 0);
   #else
