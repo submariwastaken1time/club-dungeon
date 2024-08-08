@@ -2,7 +2,7 @@
 #define PLAYER_INCLUDES
 
 #include "ECS_init.hpp"
-#include "Global_entity_values.hpp"
+#include "global_entity_values.hpp"
 #include "game_actions.hpp"
 
 #endif
