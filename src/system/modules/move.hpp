@@ -19,10 +19,13 @@ void move(entt::entity entity, entt::registry &reg)  {
   auto new_y = reg.get<pos>(entity).pos_y + y_movement;
 
   reg.patch<pos>(entity, [&](auto &pos) {pos.pos_x = new_x;});
-  std::cout << reg.get<pos>(entity).pos_x;
   reg.patch<pos>(entity, [&](auto &pos) {pos.pos_y = new_y;});
+  #ifdef debug_mode
+  std::cout << "y: "
   std::cout << reg.get<pos>(entity).pos_y << std::endl;
-
+  std::cout << "x: "
+  std::cout << reg.get<pos>(entity).pos_x;
+  #endif
 }
 
 #endif
