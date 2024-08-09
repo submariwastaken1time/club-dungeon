@@ -31,7 +31,6 @@ jobs:
           - os: ubuntu-20.04
             triplet: x64-linux
             platform-name: linux.x64
-
     env:
       # Indicates the CMake build directory where project files and binaries are being produced.
       CMAKE_BUILD_DIR: ${{ github.workspace }}/build
@@ -116,7 +115,6 @@ jobs:
           file_glob: true
           tag: ${{ github.ref }}
           overwrite: true
-
   emscripten:
     runs-on: ubuntu-latest
     env:
