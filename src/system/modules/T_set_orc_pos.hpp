@@ -8,10 +8,10 @@
 #ifndef T_SET_ORC_POS
 #define T_SET_ORC_POS
 void T_set_orc_pos(entt::registry reg) {
-
-auto orc_view = reg.view<name>()
-for (entt::entity entity : orc_view) {
-  if (reg.get<name>(entity) == "Orc") {
+entt::entity orc;
+auto orc_view = reg.view<name>();
+for (entt::entity entity; : orc_view;) {
+  if (reg.get<name>(entity).name == "Orc") {
   auto orc = entity;
   }
 }

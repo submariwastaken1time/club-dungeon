@@ -18,4 +18,5 @@ void main_loop() {
       }
     }
     SDL_WaitEvent(nullptr);
+  std::atexit(SDL_Quit);
 }

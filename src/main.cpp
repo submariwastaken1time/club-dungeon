@@ -39,6 +39,11 @@ tcod::Context context;
 
 #include "init_game.hpp"
 #include "main_game_loop.hpp"
+
+#ifndef EMSCRIPTEN_KEEPALIVE
+#define EMSCRIPTEN_KEEPALIVE
+#endif
+
 /*
 where the meat and potatoes of the game is, the code in the header files are added here, with
 includes used to keep the code as modular as possible, think of the header files as a bin of lego
