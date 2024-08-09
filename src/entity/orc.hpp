@@ -18,10 +18,10 @@ ID | name | position | character | foreground color | hp | atk | xp | AI
 entt::entity create_orc(entt::registry &registry) {
   auto orc = registry.create();
   registry.emplace<name>(orc,"Orc");
-  registry.emplace<pos>(orc, 0 , 0 );
+  registry.emplace<pos>(orc, 2 , 2 );
   registry.emplace<icon>(orc, 'O');
   registry.emplace<fg>(orc, fg{255u , 255u , 255u} );
-  registry.emplace<hp>(orc, 0 );
+  registry.emplace<hp>(orc, 20 );
   registry.emplace<atk>(orc, 0 );
   registry.emplace<xp>(orc, 0, 0 );
   registry.emplace<AI>(orc, AI{0u} );
