@@ -13,8 +13,8 @@ void main_loop() {
     SDL_Event event;
     while (SDL_PollEvent(&event)){
       if(event.key.state == SDL_PRESSED){
-        update_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
-        update_monsters(E_registry);
+        prompt_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
+        update_game(E_registry);
       }
     }
     SDL_WaitEvent(nullptr);

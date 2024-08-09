@@ -13,14 +13,14 @@
 #define UPDATE_GAME
 // update only the movement
 
-void update_monsters(entt::registry &reg) { auto view_moves = reg.view<actions>();
+void update_game(entt::registry &reg) { auto view_moves = reg.view<actions>();
 for (auto entity : view_moves) {
     move(entity, reg);
   }
 }
-// update only the player based on inputs
+// prompt the player for inputs
 
-void update_player(entt::registry &reg, std::string key) { auto view_player = reg.view<player_marker>();
+void prompt_player(entt::registry &reg, std::string key) { auto view_player = reg.view<player_marker>();
   for (auto player : view_player) {
     input_to_action(key, reg, player);
   }

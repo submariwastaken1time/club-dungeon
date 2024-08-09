@@ -1,5 +1,13 @@
+// a way to toggle debug printouts
+
+#ifndef debug_mode
+#define debug_mode
+#endif
+
+// a way to toggle emscripten
+
 #ifdef __EMSCRIPTEN__
-#include <emscripten.h>
+#include <emscripten.hpp>
 #endif __EMSCRIPTEN__
 
 #include <stdlib.h>
@@ -10,18 +18,24 @@
 
 #include "system/render_game.hpp"
 #include "system/update_game.hpp"
+
 #include "system/modules/examine_HP.hpp"
-// #include "system/modules/bump_test.hpp"
+#include "system/modules/bump_test.hpp"
+#include "system/modules/attack.hpp"
 #include "system/modules/render_character.hpp"
 #include "system/modules/move.hpp"
 #include "system/modules/input_handling.hpp"
+#include "system/modules/T_set_orc_pos.hpp"
+#include "system/modules/set_pos.hpp"
+
 #include "entity/player.hpp"
 #include "entity/orc.hpp"
+
 #include "engine_tools/state_manager.hpp"
 #include "engine_tools/rebinding.hpp"
 
 auto params = TCOD_ContextParams{};
-auto context = tcod::Context(params);
+tcod::Context context;
 
 #include "init_game.hpp"
 #include "main_game_loop.hpp"
@@ -42,7 +56,8 @@ int main(int argc, char* argv[]) {
   auto tileset = tcod::load_tilesheet("E://club-dungeon/Anikki_square_16x16.png", {16, 16},
   tcod::CHARMAP_CP437);
   params.tileset = tileset.get();
-    init_game();
+  context = tcod::Context(params);
+  init_game();
   #ifdef __EMSCRIPTEN__
   emscripten_set_main_loop(main_loop, 0, 0);
   #else
