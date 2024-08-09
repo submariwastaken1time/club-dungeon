@@ -26,11 +26,7 @@ entt::entity bump_test(entt::entity entity, entt::registry &reg, int x_dir_to_te
       #ifdef debug_mode
       std::cout << "there's nothing there" << std::endl;
       #endif
-      auto player_view = reg.view<player_marker>();
-      for (entt::entity entity : player_view) {
-        entt::entity player = entity;
-        return player;
-      }
+      return entt::null
     }
   }
 }
