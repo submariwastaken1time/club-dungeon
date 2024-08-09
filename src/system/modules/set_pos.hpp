@@ -7,7 +7,7 @@
 
 #ifndef SET_POS
 #define SET_POS
-void set_pos(entt::entity entity, entt::registry reg, int x , int y) {
+void set_pos(entt::entity entity, entt::registry &reg, int x , int y) {
   reg.patch<pos>(entity, [&](auto &pos) {pos.pos_x = x;});
   reg.patch<pos>(entity, [&](auto &pos) {pos.pos_y = y;});
 }

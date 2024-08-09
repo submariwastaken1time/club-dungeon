@@ -10,7 +10,7 @@
 
 auto player_view = reg.view<player_marker>()
 for (entt::entity entity : player_view) {
-  auto player = entity
+  entt::entity player = entity;
 }
 
 #endif
