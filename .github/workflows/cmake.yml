@@ -166,10 +166,9 @@ jobs:
           path: build/bin
           retention-days: 7
           if-no-files-found: error
-
--name: Upload CMake logs
-  if: always()
-  uses: actions/upload-artifact@v4
-  with:
-    name: 'cmake-build-logs-$ {{matrix.triplet}}'
-    path: build/**/*.log
+      -name: Upload CMake logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'cmake-build-logs-$ {{matrix.triplet}}'
+          path: build/**/*.log

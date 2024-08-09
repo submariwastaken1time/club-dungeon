@@ -5,7 +5,7 @@
 
 #endif
 
-#idndef ATTACK
+#ifndef ATTACK
 #define ATTACK
 
 void attack(entt::entity attacker, entt::registry reg, entt::entity attacked) {
