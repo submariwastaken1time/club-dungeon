@@ -1,8 +1,8 @@
 // a way to toggle debug printouts
 
-#ifndef debug_mode
-#define debug_mode
-#endif
+// #ifndef debug_mode
+// #define debug_mode
+// #endif
 
 // a way to toggle emscripten
 

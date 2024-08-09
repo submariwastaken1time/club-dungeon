@@ -26,7 +26,7 @@ entt::entity bump_test(entt::entity entity, entt::registry &reg, int x_dir_to_te
       #ifdef debug_mode
       std::cout << "there's nothing there" << std::endl;
       #endif
-      return entt::null
+      return entt::null;
     }
   }
 }
