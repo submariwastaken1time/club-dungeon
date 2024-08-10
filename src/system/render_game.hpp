@@ -9,14 +9,11 @@
 #ifndef RENDER_GAME
 #define RENDER_GAME
 
-void render_entity(entt::registry &reg, tcod::Console &con, TCOD_ColorRGB bg_color) {
+void render_entities(entt::registry &reg, tcod::Console &con, TCOD_ColorRGB bg_color) {
   auto view_renderables = reg.view<icon, pos, fg>();
-
+  con.clear();
   for (entt::entity entity : view_renderables) {
-    con.clear();
-    if (reg.get<name>(entity).name == "Orc"){ std::cout << "orc" << std::endl;}
     render_character(entity, reg, con, bg_color);
-
   }
 }
 
