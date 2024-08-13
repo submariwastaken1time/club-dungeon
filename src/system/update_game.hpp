@@ -6,6 +6,7 @@
 #include "game_actions.hpp"
 #include "system/modules/input_handling.hpp"
 #include "system/modules/move.hpp"
+#include "system/modules/attack.hpp"
 
 #endif
 
@@ -14,10 +15,16 @@
 // update only the movement
 
 void update_game(entt::registry &reg) { auto view_moves = reg.view<actions>();
+auto player_view = reg.view<player_marker>();
+auto orc_view = reg.view<name>();
 for (auto entity : view_moves) {
     move(entity, reg);
+  for (auto player : player_view) {
+    attack(player, reg, player);
+    }
   }
 }
+
 // prompt the player for inputs
 
 void prompt_player(entt::registry &reg, std::string key) { auto view_player = reg.view<player_marker>();

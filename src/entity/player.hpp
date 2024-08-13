@@ -19,5 +19,6 @@ entt::entity create_player(entt::registry &registry) {
   registry.emplace<xp>(player, 0, 0 );
   registry.emplace<AI>(player, AI{0u} );
   registry.emplace<actions>(player, blank_actions);
+  registry.emplace<bumped_tag>(player, true);
   return player;
 }

@@ -25,7 +25,7 @@ void move(entt::entity entity, entt::registry &reg)  {
   std::cout << "y: ";
   std::cout << reg.get<pos>(entity).pos_y << std::endl;
   std::cout << "x: ";
-  std::cout << reg.get<pos>(entity).pos_x;
+  std::cout << reg.get<pos>(entity).pos_x << std::endl;
   #endif
 }
 

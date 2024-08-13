@@ -1,18 +1,19 @@
 // a way to toggle debug printouts
 
-// #ifndef debug_mode
-// #define debug_mode
-// #endif
+#ifndef debug_mode
+#define debug_mode
+#endif
 
 // a way to toggle emscripten
 
-#ifdef __EMSCRIPTEN__
-#include <emscripten.hpp>
-#endif __EMSCRIPTEN__
+// #ifdef __EMSCRIPTEN__
+// #include <emscripten.hpp>
+// #endif __EMSCRIPTEN__
 
 #include <stdlib.h>
-#include <libtcod.hpp>
+#include <libtcod.h>
 #include <SDL.h>
+
 
 #include "global_entity_values.hpp"
 

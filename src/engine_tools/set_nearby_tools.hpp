@@ -24,13 +24,13 @@ for (entt::entity : player_view) {
 }
 
 std::unordered_map< int, int, nearby_directions> nearby_map = {
-  {player_pos.pos_x, player_pos.pos_y + 1, UP},
-  {player_pos.pos_x, player_pos.pos_y - 1, DOWN},
-  {player_pos.pos_x + 1, player_pos.pos_y, RIGHT},
-  {player_pos.pos_x - 1, player_pos.pos_y, LEFT},
-  {player_pos.pos_x - 1, player_pos.pos_y + 1, UP_L},
-  {player_pos.pos_x + 1, player_pos.pos_y + 1, UP_R},
-  {player_pos.pos_x - 1, player_pos.pos_y - 1, DOWN_L},
-  {player_pos.pos_x + 1, player_pos.pos_y - 1, DOWN_R}
+  {player_pos.pos_x, player_pos.pos_y + 1, true},
+  {player_pos.pos_x, player_pos.pos_y - 1, true},
+  {player_pos.pos_x + 1, player_pos.pos_y, true},
+  {player_pos.pos_x - 1, player_pos.pos_y, true},
+  {player_pos.pos_x - 1, player_pos.pos_y + 1, true},
+  {player_pos.pos_x + 1, player_pos.pos_y + 1, true},
+  {player_pos.pos_x - 1, player_pos.pos_y - 1, true},
+  {player_pos.pos_x + 1, player_pos.pos_y - 1, true}
 }
 #endif
