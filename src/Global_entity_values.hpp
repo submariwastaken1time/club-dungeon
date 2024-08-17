@@ -21,4 +21,5 @@ struct xp {int xp; int level;};
 struct AI {uint8_t AI;};
 struct actions {struct game_actions actions;};
 struct bumped_tag {bool bumped_tag;};
+struct nearby_cont {};
 #endif

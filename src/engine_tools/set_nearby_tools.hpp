@@ -7,30 +7,19 @@
 
 #ifndef SET_NEARBY_TOOLS
 #define SET_NEARBY_TOOLS
-enum nearby_directions {
-  UP,
-  DOWN,
-  LEFT,
-  RIGHT,
-  UP_L,
-  DOWN_L,
-  UP_R,
-  DOWN_R
-};
+void set_nearby_to_entity(entt::registry reg, entt:entity entity) {
 
-auto player_view = reg.view<player_marker>()
-for (entt::entity : player_view) {
-  auto player_pos = reg.get<pos>(entity);
-}
+  auto entity_pos = reg.get<pos>(entity);
 
-std::unordered_map< int, int, nearby_directions> nearby_map = {
-  {player_pos.pos_x, player_pos.pos_y + 1, true},
-  {player_pos.pos_x, player_pos.pos_y - 1, true},
-  {player_pos.pos_x + 1, player_pos.pos_y, true},
-  {player_pos.pos_x - 1, player_pos.pos_y, true},
-  {player_pos.pos_x - 1, player_pos.pos_y + 1, true},
-  {player_pos.pos_x + 1, player_pos.pos_y + 1, true},
-  {player_pos.pos_x - 1, player_pos.pos_y - 1, true},
-  {player_pos.pos_x + 1, player_pos.pos_y - 1, true}
+  std::unordered_map< int, int, bool> nearby_map = {
+    {entity_pos.pos_x, entity_pos.pos_y + 1, true},
+    {entity_pos.pos_x, entity_pos.pos_y - 1, true},
+    {entity_pos.pos_x + 1, entity_pos.pos_y, true},
+    {entity_pos.pos_x - 1, entity_pos.pos_y, true},
+    {entity_pos.pos_x - 1, entity_pos.pos_y + 1, true},
+    {entity_pos.pos_x + 1, entity_pos.pos_y + 1, true},
+    {entity_pos.pos_x - 1, entity_pos.pos_y - 1, true},
+    {entity_pos.pos_x + 1, entity_pos.pos_y - 1, true}
+  }
 }
 #endif

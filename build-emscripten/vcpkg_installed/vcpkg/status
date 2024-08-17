@@ -1,0 +1,125 @@
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 32421728ca7fca59ac93ffc023211a23962e31933dfb3504f70e95d2449d19cc
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2a0f6a2d855a4164e32eb75c7376fe6bf9ea3485d9809b29a0ec9c23c5c3e3d1
+Status: install ok installed
+
+Package: entt
+Version: 3.13.2
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: cc8fa8650a91f831264b58a27f2f80d8f1c650b4a704553f2185bc4030e3c1bb
+Description: Gaming meets modern C++ - a fast and reliable entity-component system and much more
+Status: install ok installed
+
+Package: fmt
+Version: 11.0.2
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: 94b39775eb6540d62be9440d7b210b0da3c858f5be6b0347cd8f2ca8d7f770e3
+Description: {fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.
+Status: install ok installed
+
+Package: utf8proc
+Version: 2.9.0
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: ffe3f796bfffb29781def5f8c6888892b84a43b443b9e0ec2c500fcae1a04ce2
+Description: Clean C library for processing UTF-8 Unicode data.
+Status: install ok installed
+
+Package: sdl2
+Version: 2.30.5
+Port-Version: 1
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: 6f3eb0b9f7ab232c63e850924a9f36114765b3f1d708ce6e0c440ad231b26512
+Description: Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.
+Status: install ok installed
+
+Package: lodepng
+Version: 2021-12-04
+Port-Version: 1
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: 2720fac955029a2ff8b20a03c3c20b06c494bfbf359b9d6de3f1cd5bd534aaea
+Description: PNG encoder and decoder in C++
+Status: install ok installed
+
+Package: stb
+Version: 2023-04-11
+Port-Version: 1
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: bf65c94df89d9c89cb5efbcf46dc048cc51fd86a26ce5f4fe67fcde254de68e1
+Description: public domain header-only libraries
+Status: install ok installed
+
+Package: libtcod
+Version: 1.24.0
+Depends: stb, vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Maintainer: Kyle Benesch <4b796c65+github@gmail.com>
+Abi: 571593b7d3e6b4c6d3d7ed38396614e33b0bab1c33167c97d4c6287eaed0e8f6
+Description: Common algorithms and tools for roguelikes.
+Default-Features: png, sdl, unicode, zlib
+Status: install ok installed
+
+Package: libtcod
+Feature: png
+Depends: lodepng
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Description: Support for reading and writing PNG files.  Required to save screenshots and to load tilesets from files.
+Status: install ok installed
+
+Package: libtcod
+Feature: sdl
+Depends: sdl2
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Description: Support for SDL2 windows and events with the libtcod context.
+Status: install ok installed
+
+Package: libtcod
+Feature: unicode
+Depends: utf8proc
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Description: Support for non-ASCII characters.  Required for text printing functions
+Status: install ok installed
+
+Package: ms-gsl
+Version: 4.0.0
+Port-Version: 1
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: 4d727e0901d233176f09a27f4f4eb9333d7530426d5380e2b62a0e4785b2521c
+Description: Microsoft implementation of the Guidelines Support Library
+Status: install ok installed
+
+Package: nlohmann-json
+Version: 3.11.3
+Port-Version: 1
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: wasm32-emscripten
+Multi-Arch: same
+Abi: 709ec770c2ab7610f9455bd5b8c0b4dc9909ab40809cfa77d19be0e861c5700b
+Description: JSON for Modern C++
+Status: install ok installed
+

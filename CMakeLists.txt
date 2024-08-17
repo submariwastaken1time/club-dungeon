@@ -53,7 +53,7 @@ if(USE_LIBTCOD_SUBMODULE)
     set(BUILD_SHARED_LIBS ${WIN32})  # Builds libtcod as a shared library.
     add_subdirectory("libtcod")  # This will error if you haven't initialized libtcod the submodule!
 else()
-    find_package(libtcod CONFIG REQUIRED)  # Get from Vcpkg.
+    find_package(libtcod 1.24.0 CONFIG REQUIRED)  # Get from Vcpkg.
 endif()
 
 find_package(fmt CONFIG REQUIRED)

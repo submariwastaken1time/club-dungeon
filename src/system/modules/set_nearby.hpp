@@ -14,21 +14,17 @@
 void set_nearby(entt::registry &reg) {
 
   auto any_ent_pos = reg.view<pos>();
-  for (entt:entity entity : any_ent_pos) {
+  for (entt::entity entity : any_ent_pos) {
 
     int x = reg.get<pos>(entity).pos_x;
     int y = reg.get<pos>(entity).pos_y;
-
-    switch(nearby_map[x,y]) {
-      case true: {
-        // add entity to registry
+    if(nearby_map[x,y]) {
+      reg.emplace<nearby_tag>(entity)
+      } else {
+      #ifdef debug_mode
+      std::cout << "Exception occured! The nearby entity was not tagged as nearby or wasn't nearby"
+      #endif
       }
-      default: {
-        #ifdef debug_mode
-        std::cout << "Exception occured! The nearby entity was not added to the nearby registry"
-        #endif
-      }
-    }
   }
 }
 #endif
