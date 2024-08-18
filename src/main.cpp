@@ -6,12 +6,12 @@
 
 // a way to toggle emscripten
 
-// #ifdef __EMSCRIPTEN__
-// #include <emscripten.hpp>
-// #endif __EMSCRIPTEN__
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif __EMSCRIPTEN__
 
 #include <stdlib.h>
-#include <libtcod.h>
+#include <libtcod.hpp>
 #include <SDL.h>
 
 

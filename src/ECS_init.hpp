@@ -5,8 +5,7 @@
 
 //setup for the registry and ECS component of the engine
 
-entt::registry E_registry; // monster/entity registry, possibly also the registry for most game objects
-
+entt::registry E_registry; // main basic registry, will prolly be obsoleted soon
 #endif
 
 /*
