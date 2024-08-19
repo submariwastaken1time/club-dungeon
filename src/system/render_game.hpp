@@ -1,8 +1,8 @@
 #ifndef RENDER_GAME_INCLUDES
 #define RENDER_GAME_INCLUDES
 #include <iostream>
-#include "global_entity_values.hpp"
-#include "system/modules/render_character.hpp"
+#include "../global_entity_values.hpp"
+#include "modules/render_character.hpp"
 
 #endif
 

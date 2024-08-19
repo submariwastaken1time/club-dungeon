@@ -1,7 +1,7 @@
 #ifndef SET_POS_INCLUDES
 #define SET_POS_INCLUDES
 
-#include "ECS_init.hpp"
+#include "../../ECS_init.hpp"
 
 #endif
 

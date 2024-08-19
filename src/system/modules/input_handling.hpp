@@ -3,10 +3,10 @@
 #include <SDL.h>
 #include <string>
 
-#include "ECS_init.hpp"
-#include "global_entity_values.hpp"
-#include "game_actions.hpp"
-#include "engine_tools/input_handling_data.hpp"
+#include "../../ECS_init.hpp"
+#include "../../global_entity_values.hpp"
+#include "../../game_actions.hpp"
+#include "../../engine_tools/input_handling_data.hpp"
 #endif
 
 #ifndef INPUT_HANDLING

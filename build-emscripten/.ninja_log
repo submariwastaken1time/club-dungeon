@@ -1,4 +1,6 @@
 # ninja log v6
-412	1379	7456065862463235	E:/club-dungeon/build-emscripten/CMakeFiles/cmake.verify_globs	544c50c9557a0df8
-1380	104754	7456066895995620	build.ninja	9d489d28d8e48603
-12	261	7456066898908717	E:/club-dungeon/build-emscripten/CMakeFiles/cmake.verify_globs	544c50c9557a0df8
+251	414	7457815242989210	E:/club-dungeon/build-emscripten/CMakeFiles/cmake.verify_globs	544c50c9557a0df8
+1380	104754	7457835381706135	build.ninja	9d489d28d8e48603
+174	25059	7456886252363291	CMakeFiles/club-dungeon.dir/src/main.cpp.o	60b5762958261ef3
+116	37813	7456889509201593	bin/club-dungeon.js	b98d14daf246b386
+329	1270	7457838619967813	E:/club-dungeon/build-emscripten/CMakeFiles/cmake.verify_globs	544c50c9557a0df8

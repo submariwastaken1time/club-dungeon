@@ -1,6 +1,8 @@
 #ifndef GLOBAL_ENTITY_VALUES_INCLUDES
 #define GLOBAL_ENTITY_VALUES_INCLUDES
+#include <entt/entt.hpp>
 #include <string>
+#include <unordered_map>
 
 #include "game_actions.hpp"
 #endif
@@ -21,5 +23,5 @@ struct xp {int xp; int level;};
 struct AI {uint8_t AI;};
 struct actions {struct game_actions actions;};
 struct bumped_tag {bool bumped_tag;};
-struct nearby_cont {};
+struct nearby_cont {std::unordered_map<int,int,entt::entity> nearby_cont;};
 #endif

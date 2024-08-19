@@ -7,7 +7,7 @@
 // a way to toggle emscripten
 
 // #ifdef __EMSCRIPTEN__
-// #include <emscripten.hpp>
+// #include <emscripten.h>
 // #endif __EMSCRIPTEN__
 
 #include <stdlib.h>
@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
   tcod::CHARMAP_CP437);
   params.tileset = tileset.get();
   context = tcod::Context(params);
-  init_game();
+  init_game(E_registry);
   #ifdef __EMSCRIPTEN__
   emscripten_set_main_loop(main_loop, 0, 0);
   #else

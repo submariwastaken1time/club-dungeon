@@ -1,8 +1,8 @@
 #ifndef ORC_INCLUDES
 #define ORC_INCLUDES
 
-#include "ECS_init.hpp"
-#include "global_entity_values.hpp"
+#include "../ECS_init.hpp"
+#include "../global_entity_values.hpp"
 
 #endif
 

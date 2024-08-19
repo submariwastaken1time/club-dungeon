@@ -3,7 +3,7 @@ Compiler found: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools
 Detecting compiler hash for triplet wasm32-emscripten...
 Compiler found: E:/club-dungeon/emsdk-main/upstream/emscripten/em++.bat
 All requested packages are currently installed.
-Total install time: 8.6 us
+Total install time: 7.3 us
 entt provides CMake targets:
 
     find_package(EnTT CONFIG REQUIRED)

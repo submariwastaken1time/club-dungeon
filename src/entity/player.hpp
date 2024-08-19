@@ -1,10 +1,10 @@
 #ifndef PLAYER_INCLUDES
 #define PLAYER_INCLUDES
 
-#include "ECS_init.hpp"
-#include "global_entity_values.hpp"
-#include "game_actions.hpp"
-
+#include "../ECS_init.hpp"
+#include "../global_entity_values.hpp"
+#include "../game_actions.hpp"
+#include "../engine_tools/set_nearby_tools.hpp"
 #endif
 
 entt::entity create_player(entt::registry &registry) {
@@ -19,6 +19,7 @@ entt::entity create_player(entt::registry &registry) {
   registry.emplace<xp>(player, 0, 0 );
   registry.emplace<AI>(player, AI{0u} );
   registry.emplace<actions>(player, blank_actions);
-  registry.emplace<bumped_tag>(player, true);
+  registry.emplace<bumped_tag>(player, false);
+  registry.emplace<nearby_cont>(player, nearby_keys);
   return player;
 }

@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include <iostream>
-#include "ECS_init.hpp"
+#include "../../ECS_init.hpp"
 
 #endif
 
@@ -13,7 +13,6 @@
 // the function used to determine whether to bump/attack/interact into/with things or not
 
 void bump_test(entt::entity entity, entt::registry &reg, int x_dir_to_test, int y_dir_to_test) {
-  auto nearby_entts_cont = reg.view<nearby_tag>();
 
 }
 #endif

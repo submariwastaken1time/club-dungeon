@@ -1,7 +1,7 @@
 #ifndef MAPPING_INCLUDES
 #define MAPPING_INCLUDES
 
-#include "ECS_init.hpp"
+#include "../sECS_init.hpp"
 
 #endif
 

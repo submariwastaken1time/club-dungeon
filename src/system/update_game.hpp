@@ -1,12 +1,12 @@
 #ifndef UPDATE_INCLUDES
 #define UPDATE_INCLUDES
 
-#include "ECS_init.hpp"
-#include "global_entity_values.hpp"
-#include "game_actions.hpp"
-#include "system/modules/input_handling.hpp"
-#include "system/modules/move.hpp"
-#include "system/modules/attack.hpp"
+#include "../ECS_init.hpp"
+#include "../global_entity_values.hpp"
+#include "../game_actions.hpp"
+#include "modules/input_handling.hpp"
+#include "modules/move.hpp"
+#include "modules/attack.hpp"
 
 #endif
 

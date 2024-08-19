@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-#include "ECS_init.hpp"
-#include "global_entity_values.hpp"
+#include "../../ECS_init.hpp"
+#include "../../global_entity_values.hpp"
 
 #endif
 

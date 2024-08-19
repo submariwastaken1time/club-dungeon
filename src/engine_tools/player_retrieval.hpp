@@ -1,7 +1,7 @@
 #ifndef PLAYER_RETRIEVAL_INCLUDES
 #define PLAYER_RETRIEVAL_INCLUDES
 
-#include "ECS_init.hpp"
+#include "../ECS_init.hpp"
 
 #endif
 

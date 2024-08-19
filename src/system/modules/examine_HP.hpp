@@ -5,8 +5,8 @@
 #include <iostream>
 #include <format>
 //source folder includes
-#include "ECS_init.hpp"
-#include "global_entity_values.hpp"
+#include "../../ECS_init.hpp"
+#include "../../global_entity_values.hpp"
 
 #endif
 
