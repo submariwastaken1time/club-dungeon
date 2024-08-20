@@ -26,5 +26,7 @@ entt::entity create_orc(entt::registry &registry) {
   registry.emplace<xp>(orc, 0, 0 );
   registry.emplace<AI>(orc, AI{0u} );
   registry.emplace<actions>(orc, blank_actions);
+  registry.emplace<collision_tag>(orc, true);
+  registry.emplace<bumped_into>(orc, entt::null);
   return orc;
 }

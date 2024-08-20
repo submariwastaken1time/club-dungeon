@@ -22,6 +22,6 @@ struct atk {int atk;};
 struct xp {int xp; int level;};
 struct AI {uint8_t AI;};
 struct actions {struct game_actions actions;};
-struct bumped_tag {bool bumped_tag;};
-struct nearby_cont {std::unordered_map<int,int,entt::entity> nearby_cont;};
+struct bumped_into {entt::entity bumped_ent;};
+struct collision_tag {bool coll;};
 #endif

@@ -5,7 +5,7 @@
 #include "../global_entity_values.hpp"
 #include "../game_actions.hpp"
 #include "modules/input_handling.hpp"
-#include "modules/move.hpp"
+#include "modules/move_or_attack.hpp"
 #include "modules/attack.hpp"
 
 #endif
@@ -18,7 +18,7 @@ void update_game(entt::registry &reg) { auto view_moves = reg.view<actions>();
 auto player_view = reg.view<player_marker>();
 auto orc_view = reg.view<name>();
 for (auto entity : view_moves) {
-    move(entity, reg);
+    move_or_attack(entity, reg);
   for (auto player : player_view) {
     attack(player, reg, player);
     }

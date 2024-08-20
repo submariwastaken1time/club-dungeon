@@ -24,7 +24,7 @@
 #include "system/modules/bump_test.hpp"
 #include "system/modules/attack.hpp"
 #include "system/modules/render_character.hpp"
-#include "system/modules/move.hpp"
+#include "system/modules/move_or_attack.hpp"
 #include "system/modules/input_handling.hpp"
 #include "system/modules/T_set_orc_pos.hpp"
 #include "system/modules/set_pos.hpp"
