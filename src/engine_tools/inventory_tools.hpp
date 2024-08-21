@@ -8,6 +8,6 @@
 #ifndef INVENTORY_TOOLS
 #define INVENTORY_TOOLS
 
-std::vector<entt::entity> inventory_cont;
+entt::registry inventory_cont;
 
 #endif

@@ -14,21 +14,35 @@ bool bump_test(entt::entity entity, entt::registry &reg, int x_dir_to_test, int 
   auto entity_pos = reg.get<pos>(entity);
 
   auto pos_view = reg.view<pos>();
-  for (entt::entity entity_to_check : pos_view) {
+  entt::entity *ent_t_check;
 
+  for (entt::entity entity_to_check : pos_view) {
     auto entity_to_check_pos = reg.get<pos>(entity_to_check);
-    if (entity_pos.pos_x + x_dir_to_test == entity_to_check_pos.pos_x) {
-      if (entity_pos.pos_y + y_dir_to_test == entity_to_check_pos.pos_y) {
-        reg.patch<bumped_into>(entity, [&](auto bumped_into){bumped_into.bumped_ent = entity_to_check;});
+
+    if (entity_to_check_pos.pos_x == entity_pos.pos_x + x_dir_to_test) {
+      if (entity_to_check_pos.pos_y == entity_pos.pos_y + y_dir_to_test) {
+
+        reg.patch<bumped_into>(entity, [&](auto b_into){b_into.bumped_ent = entity_to_check;});
+
         #ifdef debug_mode
-        std::cout << "Sucessful bump test";
+        if (reg.get<bumped_into>(entity).bumped_ent != entt::null){
+            std::cout << "Sucessful bump test" << std::endl;
+        }
         #endif
-        return true;
+
+        ent_t_check = &entity_to_check;
       }
-      return false;
     }
-    return false;
+
+    ent_t_check = &entity_to_check;
   }
-  return false;
+
+  auto bumped_entity = reg.get<bumped_into>(entity).bumped_ent;
+  auto no_coll_entity = reg.get<collision_tag>(*ent_t_check).coll;
+  if (bumped_entity == entt::null || !no_coll_entity) {
+    return false;
+  } else {
+    return true;
+  }
 }
 #endif

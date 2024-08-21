@@ -12,15 +12,17 @@
 #ifndef MOVE
 #define MOVE
 
-void move_or_attack(entt::entity entity, entt::registry &reg)  {
+void move_or_bump(entt::entity entity, entt::registry &reg)  {
   auto x_movement = reg.get<actions>(entity).actions.x_move;
   auto y_movement = reg.get<actions>(entity).actions.y_move;
 
   auto new_x = reg.get<pos>(entity).pos_x + x_movement;
   auto new_y = reg.get<pos>(entity).pos_y + y_movement;
 
-  if (bump_test(entity, reg, x_movement, y_movement) == false) {
-
+  if (bump_test(entity, reg, x_movement, y_movement) == true) {
+    auto b_ent = reg.get<bumped_into>(entity).bumped_ent;
+    attack(entity, reg, b_ent);
+  } else {
     reg.patch<pos>(entity, [&](auto &pos) {pos.pos_x = new_x;});
     reg.patch<pos>(entity, [&](auto &pos) {pos.pos_y = new_y;});
 
@@ -30,11 +32,6 @@ void move_or_attack(entt::entity entity, entt::registry &reg)  {
     std::cout << "x: ";
     std::cout << reg.get<pos>(entity).pos_x << std::endl;
     #endif
-  } else {
-
-    auto b_ent = reg.get<bumped_into>(entity).bumped_ent;
-    attack(entity, reg, b_ent);
-
   }
 }
 
