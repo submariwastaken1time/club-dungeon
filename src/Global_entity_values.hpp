@@ -22,6 +22,7 @@ struct atk {int atk;};
 struct xp {int xp; int level;};
 struct AI {uint8_t AI;};
 struct actions {struct game_actions actions;};
-struct bumped_into {entt::entity bumped_ent = entt::null;};
+struct bumped_into {entt::entity bumped_ent;};
 struct collision_tag {bool coll;};
+struct in_inventory {};
 #endif

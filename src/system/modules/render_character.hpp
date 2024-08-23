@@ -4,6 +4,7 @@
 
 #include "../../ECS_init.hpp"
 #include "../../global_entity_values.hpp"
+#include "../../states.hpp"
 #endif
 
 #ifndef RENDER_CHAR
@@ -11,7 +12,7 @@
 
 void render_character(entt::entity entity, entt::registry &reg , tcod::Console &console,
 TCOD_ColorRGB bg_color ) {
-
+if (G_state == ingame) {
 uint32_t code_point = reg.get<icon>(entity).icon;
 int x = reg.get<pos>(entity).pos_x;
 int y = reg.get<pos>(entity).pos_y;
@@ -23,7 +24,7 @@ if (console.in_bounds({x, y})) {
   tile.fg = fg_color;
   tile.bg = bg_color;
 } else {}
-
+}
 }
 
 #endif

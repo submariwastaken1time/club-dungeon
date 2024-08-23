@@ -1,8 +1,10 @@
+#ifndef debug_move
+#define debug_move
+#endif
 #ifndef MAIN_GAME_LOOP
 #define MAIN_GAME_LOOP
 
 void main_loop() {
-  set_ingame();
   auto console = context.new_console();
   static const auto viewport_options = TCOD_ViewportOptions{
     .tcod_version = TCOD_COMPILEDVERSION,
@@ -18,6 +20,9 @@ void main_loop() {
     while (SDL_PollEvent(&event)){
       if(event.key.state == SDL_PRESSED){
         prompt_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
+        #ifdef debug_move
+        std::cout << SDL_GetScancodeName(event.key.keysym.scancode) << std::endl;
+        #endif
         switch (G_state) {
           case ingame: {update_game(E_registry);} break;
           // case inventory_screen: {render_inventory} break;

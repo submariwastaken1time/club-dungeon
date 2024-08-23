@@ -11,7 +11,7 @@
 #define REBINDING
 
 void rebinding(std::string key, action_dictionary target) {
-  key_bind_to_enum[key] = target;
+  key_bind_to_action[key] = target;
 }
 
 #endif
