@@ -14,6 +14,7 @@
 #define INPUT_HANDLING
 
 void input_to_action(std::string key, entt::registry &reg, entt::entity entity) {
+  auto patch_actions = reg.patch<actions>;
   if (G_state == ingame) {
     reg.patch<actions>(entity,[&](auto &actions) {actions.actions = blank_actions;});
     switch(key_bind_to_action[key]) {
@@ -58,19 +59,19 @@ void input_to_action(std::string key, entt::registry &reg, entt::entity entity) 
         reg.patch<actions>(entity,[&](auto &actions) {actions.actions = blank_actions;});
       } break;
       case UP_MOVE: {
-
+        reg.patch<actions>(entity,[&](auto &actions) {actions.actions.i_y_move = -1;});
       } break;
       case DOWN_MOVE: {
-
+        reg.patch<actions>(entity,[&](auto &actions) {actions.actions.i_y_move = 1;});
       } break;
       case LEFT_MOVE: {
         // show tooltips/info
       } break;
       case SELECT_ITEM: {
-
+        reg.patch<actions>(entity,[&](auto &actions) {actions.actions.i_select = true;});
       } break;
       case QUIT_INVENTORY: {
-
+        reg.patch<actions>(entity,[&](auto &actions) {actions.actions.i_quit = true;});
       } break;
     }
   }

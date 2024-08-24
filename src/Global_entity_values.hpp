@@ -25,4 +25,8 @@ struct actions {struct game_actions actions;};
 struct bumped_into {entt::entity bumped_ent;};
 struct collision_tag {bool coll;};
 struct in_inventory {};
+struct enemy {};
+struct item {};
+struct enchant{};
+struct heal{int amount;};
 #endif

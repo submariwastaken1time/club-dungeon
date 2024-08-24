@@ -9,6 +9,7 @@
 #include "bump_test.hpp"
 #include "attack.hpp"
 #include "../../states.hpp"
+#include "pickup.hpp"
 #endif
 
 #ifndef MOVE
@@ -24,7 +25,11 @@ void move_or_bump(entt::entity entity, entt::registry &reg)  {
 
   if (bump_test(entity, reg, x_movement, y_movement) == true) {
     auto b_ent = reg.get<bumped_into>(entity).bumped_ent;
-    attack(entity, reg, b_ent);
+    if (reg.all_of<enemy>(b_ent)) {
+      attack(entity, reg, b_ent);
+    } else if (reg.all_of<item>(b_ent)) {
+      pickup(reg, b_ent);
+    }
     reset_bumped_component(reg, entity);
   } else {
     reg.patch<pos>(entity, [&](auto &pos) {pos.pos_x = new_x;});

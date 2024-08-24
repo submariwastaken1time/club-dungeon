@@ -14,7 +14,7 @@ void main_loop() {
     .align_x = 0.5,
     .align_y = 0.5,
   };
-  render_entities(E_registry, console, {0,0,0});
+  render_game(E_registry, console, {0,0,0});
   context.present(console,viewport_options);
     SDL_Event event;
     while (SDL_PollEvent(&event)){

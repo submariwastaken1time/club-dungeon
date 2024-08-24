@@ -20,12 +20,16 @@ void update_game(entt::registry &reg) {
   auto view_moves = reg.view<actions>();
   auto player_view = reg.view<player_marker>();
   auto name_view = reg.view<name>();
+  auto view_inventory = reg.view<in_inventory>();
 
   for (auto entity : view_moves) {
     move_or_bump(entity, reg);
   }
   for (auto entity : name_view) {
     kill(reg,entity);
+  }
+  for (auto ent : player_view) {
+    update_inventory(ent);
   }
 }
 }
