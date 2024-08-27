@@ -5,7 +5,7 @@
 #include <string>
 
 #include "../global_entity_values.hpp"
-#include "inventory_tools.hpp"
+#include "../engine_tools/inventory_tools.hpp"
 
 #endif
 

@@ -14,7 +14,7 @@
 #define INPUT_HANDLING
 
 void input_to_action(std::string key, entt::registry &reg, entt::entity entity) {
-  auto patch_actions = reg.patch<actions>;
+  // auto patch_actions = reg.patch<actions>;
   if (G_state == ingame) {
     reg.patch<actions>(entity,[&](auto &actions) {actions.actions = blank_actions;});
     switch(key_bind_to_action[key]) {

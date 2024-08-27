@@ -1,13 +1,13 @@
 #ifndef LIFE_POT_INCLUDES
 #define LIFE_POT_INCLUDES
-#include "../../ECS_init.hpp"
-#include "../../global_entity_values.hpp"
+#include "../ECS_init.hpp"
+#include "../global_entity_values.hpp"
 #endif
 
 #ifndef LIFE_POT
 #define LIFE_POT
 
-void create_life_pot(entt::registry &registry) {
+entt::entity create_life_pot(entt::registry &registry) {
   auto life_pot = registry.create();
   registry.emplace<name>(life_pot,"Life potion");
   registry.emplace<pos>(life_pot, 3 , 2 );
@@ -16,7 +16,7 @@ void create_life_pot(entt::registry &registry) {
   registry.emplace<collision_tag>(life_pot, true);
   registry.emplace<item>(life_pot);
   registry.emplace<heal>(life_pot, 100);
-  return enchant_scroll;
+  return life_pot;
 }
 
 #endif

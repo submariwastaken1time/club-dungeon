@@ -25,9 +25,9 @@ void main_loop() {
         #endif
         switch (G_state) {
           case ingame: {update_game(E_registry);} break;
-          // case inventory_screen: {render_inventory} break;
-          // case pause_menu: {} break;
-          // case menu_1: {} break;
+          case inventory_screen: {}
+          case pause_menu: {} break;
+          case menu_1: {} break;
         }
       }
     }

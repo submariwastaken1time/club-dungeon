@@ -31,6 +31,8 @@
 
 #include "entity/player.hpp"
 #include "entity/orc.hpp"
+#include "entity/life_pot.hpp"
+#include "entity/enchant_scroll.hpp"
 
 #include "engine_tools/state_manager.hpp"
 #include "engine_tools/rebinding.hpp"

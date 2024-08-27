@@ -9,6 +9,7 @@
 #include "modules/attack.hpp"
 #include "modules/kill.hpp"
 #include "../states.hpp"
+#include "update_inventory.hpp"
 #endif
 
 #ifndef UPDATE_GAME
@@ -19,17 +20,17 @@ void update_game(entt::registry &reg) {
   if (G_state == ingame) {
   auto view_moves = reg.view<actions>();
   auto player_view = reg.view<player_marker>();
-  auto name_view = reg.view<name>();
+  auto monster_view = reg.view<name,hp>();
   auto view_inventory = reg.view<in_inventory>();
 
+  for (auto ent : player_view) {
+    update_inventory(reg,ent);
+  }
   for (auto entity : view_moves) {
     move_or_bump(entity, reg);
   }
-  for (auto entity : name_view) {
+  for (auto entity : monster_view) {
     kill(reg,entity);
-  }
-  for (auto ent : player_view) {
-    update_inventory(ent);
   }
 }
 }

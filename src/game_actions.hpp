@@ -6,9 +6,8 @@ struct game_actions {
   bool open_inventory = false;
   int i_y_move = 0;
   bool i_select = false;
-  int i_select_char = 0;
   bool i_quit = false;
-  int i_highlight_char = 0;
+  int i_highlight_item = 0;
 };
 
 struct game_actions blank_actions;

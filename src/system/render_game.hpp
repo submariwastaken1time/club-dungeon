@@ -4,8 +4,8 @@
 #include "../global_entity_values.hpp"
 #include "modules/render_character.hpp"
 #include "../states.hpp"
-#include "../engine_tools/render_inventory.hpp"
-#include "../engine_tools/render_i_cursor.hpp"
+#include "render_inventory.hpp"
+#include "render_i_cursor.hpp"
 
 #endif
 
@@ -25,7 +25,7 @@ void render_game(entt::registry &reg, tcod::Console &con, TCOD_ColorRGB bg_color
     for (auto entity : view_player) {
       auto is_open_i_button_pressed = reg.get<actions>(entity).actions.open_inventory;
       if (is_open_i_button_pressed) {
-        auto item_highlighted = reg.get<actions>(entity).actions.i_highlight_char;
+        auto item_highlighted = reg.get<actions>(entity).actions.i_highlight_item;
         render_inventory(con,reg);
         render_i_cursor(item_highlighted,con);
       }
