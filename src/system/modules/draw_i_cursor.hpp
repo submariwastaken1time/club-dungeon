@@ -1,6 +1,6 @@
 #ifndef RENDER_I_CURSOR_INCLUDES
 #define RENDER_I_CURSOR_INCLUDES
-
+#include <libtcod.h>
 #endif
 
 #ifndef RENDER_I_CURSOR

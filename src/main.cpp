@@ -17,15 +17,18 @@
 
 #include "global_entity_values.hpp"
 
-#include "system/render_game.hpp"
-#include "system/update_game.hpp"
+#include "system/render_ingame.hpp"
+#include "system/update_ingame.hpp"
+#include "system/render_inventory.hpp"
+#include "system/render_i_cursor.hpp"
+#include "system/update_inventory.hpp"
 
 #include "system/modules/examine_HP.hpp"
 #include "system/modules/bump_test.hpp"
 #include "system/modules/attack.hpp"
 #include "system/modules/render_character.hpp"
 #include "system/modules/move_or_bump.hpp"
-#include "system/modules/input_handling.hpp"
+#include "system/modules/ingame_input_handling.hpp"
 #include "system/modules/T_set_orc_pos.hpp"
 #include "system/modules/set_pos.hpp"
 

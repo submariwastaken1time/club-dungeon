@@ -19,7 +19,7 @@ void render_inventory(tcod::Console &con, entt::registry &reg) {
   {'1','2','3','4','5','6','7','8'}, {{255,255,255}},{{10,10,10}} );
 
   auto inven_elements = reg.view<name,in_inventory>();
-  int inventory_index;
+  int inventory_index = 0;
 
   for (entt::entity inven_element : inven_elements) {
     auto item_name = reg.get<name>(inven_element).name;
@@ -28,7 +28,7 @@ void render_inventory(tcod::Console &con, entt::registry &reg) {
     inven_entry.append(numbers_to_letters_for_render[inventory_index++]);
     inven_entry.append(item_name);
 
-    tcod::print(con,{inven_w_offset,inven_h_offset+inventory_index},
+    tcod::print(con,{inven_w_offset,inven_h_offset-inventory_index},
     inven_entry,{{255,255,255}},{{10,0,0}},
     TCOD_LEFT,TCOD_BKGND_LIGHTEN);
     inventory_index++;

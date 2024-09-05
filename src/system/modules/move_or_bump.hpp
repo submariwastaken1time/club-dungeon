@@ -29,7 +29,7 @@ void move_or_bump(entt::entity entity, entt::registry &reg)  {
       attack(entity, reg, b_ent);
     } else if (reg.all_of<item>(b_ent)) {
       pickup(reg, b_ent);
-      reg.destroy(b_ent);
+      reg.remove<pos,icon,fg>(b_ent);
       reg.patch<pos>(entity, [&](auto &pos) {pos.pos_x = new_x;});
       reg.patch<pos>(entity, [&](auto &pos) {pos.pos_y = new_y;});
     }

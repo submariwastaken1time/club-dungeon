@@ -9,7 +9,7 @@
 #ifndef PICKUP
 #define PICKUP
 
-void pickup(entt::registry &reg, entt::entity item) {
+void pickup(entt::registry &reg, entt::entity &item) {
   reg.emplace_or_replace<in_inventory>(item);
 }
 

@@ -9,7 +9,7 @@
 #ifndef KILL
 #define KILL
 void kill(entt::registry &reg, entt::entity entity) {
-  if (G_state == ingame && reg.all_of<hp>(entity)) {
+if (G_state == ingame && reg.all_of<hp>(entity)) {
   auto entity_name = reg.get<name>(entity).name;
   if (reg.get<hp>(entity).hp < 0) {
     reg.destroy(entity);

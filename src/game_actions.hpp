@@ -9,7 +9,15 @@ struct game_actions {
   bool i_quit = false;
   int i_highlight_item = 0;
 };
-
+struct game_actions blank_inv_actions = {
+  .x_move = 0,
+  .y_move = 0,
+  .open_inventory = true,
+  .i_y_move = 0,
+  .i_select = false,
+  .i_quit = false,
+  .i_highlight_item = 0,
+};
 struct game_actions blank_actions;
 
 enum action_dictionary {

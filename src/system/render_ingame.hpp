@@ -22,13 +22,12 @@ void render_game(entt::registry &reg, tcod::Console &con, TCOD_ColorRGB bg_color
   }
   if (G_state == inventory_screen) {
     auto view_player = reg.view<player_marker>();
+    con.clear();
     for (auto entity : view_player) {
       auto is_open_i_button_pressed = reg.get<actions>(entity).actions.open_inventory;
-      if (is_open_i_button_pressed) {
-        auto item_highlighted = reg.get<actions>(entity).actions.i_highlight_item;
-        render_inventory(con,reg);
-        render_i_cursor(item_highlighted,con);
-      }
+      auto item_highlighted = reg.get<actions>(entity).actions.i_highlight_item;
+      render_inventory(con,reg);
+      render_i_cursor(item_highlighted,con);
     }
   }
 }

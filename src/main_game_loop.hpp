@@ -14,18 +14,23 @@ void main_loop() {
     .align_x = 0.5,
     .align_y = 0.5,
   };
-  render_game(E_registry, console, {0,0,0});
+  switch (G_state) {
+    case ingame: {render_game(E_registry, console, {0,0,0});} break;
+    case inventory_screen: {} break;
+    case pause_menu: {} break;
+    case menu_1: {} break;
+  }
   context.present(console,viewport_options);
     SDL_Event event;
     while (SDL_PollEvent(&event)){
       if(event.key.state == SDL_PRESSED){
-        prompt_player(E_registry, SDL_GetScancodeName(event.key.keysym.scancode));
+        auto get_key = SDL_GetScancodeName(event.key.keysym.scancode);
         #ifdef debug_move
         std::cout << SDL_GetScancodeName(event.key.keysym.scancode) << std::endl;
         #endif
         switch (G_state) {
-          case ingame: {update_game(E_registry);} break;
-          case inventory_screen: {}
+          case ingame: {prompt_player_ingame(E_registry, get_key); update_ingame(E_registry);} break;
+          case inventory_screen: {update_inventory(E_registry);} break;
           case pause_menu: {} break;
           case menu_1: {} break;
         }
